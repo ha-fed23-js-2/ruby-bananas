@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import './Menu.css'
 
+import template from './template.png'
+
 
 function Menu() {
 
@@ -9,7 +11,54 @@ function Menu() {
 		<>
 			<section className='gallerySection'>
 				<div className='gallery'>
-					<div><img src='./template.png'></img></div>
+					<div className='container'>
+					<img src={template}/>
+						<div class="overlay">
+							<div class="text">Hello World</div>
+						</div>
+					</div>
+
+					<div className='container'>
+						<img src={template} />
+						<div class="overlay">
+							<div class="text">Hello World</div>
+						</div>
+					</div>
+
+
+					<div className='container'>
+						<img src={template} />
+						<div class="overlay">
+							<div class="text">Hello World</div>
+						</div>
+					</div>
+
+
+					<div className='container'>
+						<img src={template} />
+						<div class="overlay">
+							<div class="text">Hello World</div>
+						</div>
+					</div>
+
+
+					<div className='container'>
+						<img src={template} />
+						<div class="overlay">
+							<div class="text">Hello World</div>
+						</div>
+					</div>
+
+
+					<div className='container'>
+						<img src={template} />
+						<div class="overlay">
+							<div class="text">Hello World</div>
+							<button className='add-btn'>Add</button>
+						</div>
+					</div>
+
+
 				</div>
 
 			</section>
