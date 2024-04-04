@@ -1,7 +1,6 @@
 
 import './NavMenu.css'
 
-import navStore, { guestCounter } from './navStore'
 
 function NavMenu() {
 
@@ -11,8 +10,8 @@ function NavMenu() {
 
 			<div>
 			<label> Guests: </label>
-			<select onChange={guestCounter}>
-			<option value="1">1 {guest} </option>
+			<select>
+			<option value="1">1  </option>
 			<option value="2">2</option>
 			<option value="3">3</option>
 			<option value="4">4</option>

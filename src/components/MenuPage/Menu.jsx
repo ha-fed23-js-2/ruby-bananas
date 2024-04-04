@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 
-
+import './Menu.css'
 import NavMenu from './NavMenu'
 import courses from './menuList.js'
 
@@ -21,7 +21,7 @@ function Menu() {
 					{courses.map((course, index) => (
 
 					<div className='menu-container' key={course.id}>
-							<img src={course.image} alt={course.title}/>
+							<img className="image" src={course.image} alt={course.title}/>
 							<div className="overlay">
 							<h2>{course.title}</h2>
 							<p>{course.description}</p>
