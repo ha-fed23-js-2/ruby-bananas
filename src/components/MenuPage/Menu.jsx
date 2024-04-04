@@ -1,66 +1,37 @@
 import { useState } from 'react'
 
-import './Menu.css'
 
-import template from './template.png'
 
+import NavMenu from './NavMenu'
+import courses from './menuList.js'
 
 function Menu() {
 
 	return (
+
 		<>
+		<NavMenu/>
+
+
+
 			<section className='gallerySection'>
+
 				<div className='gallery'>
-					<div className='container'>
-					<img src={template}/>
-						<div class="overlay">
-							<div class="text">Hello World</div>
+
+					{courses.map((course, index) => (
+
+					<div className='menu-container' key={course.id}>
+							<img src={course.image} alt={course.title}/>
+							<div className="overlay">
+							<h2>{course.title}</h2>
+							<p>{course.description}</p>
+							<p>{course.contains}</p>
+							<h4>{course.price}</h4>
 						</div>
 					</div>
+					))}
 
-					<div className='container'>
-						<img src={template} />
-						<div class="overlay">
-							<div class="text">Hello World</div>
-						</div>
-					</div>
-
-
-					<div className='container'>
-						<img src={template} />
-						<div class="overlay">
-							<div class="text">Hello World</div>
-						</div>
-					</div>
-
-
-					<div className='container'>
-						<img src={template} />
-						<div class="overlay">
-							<div class="text">Hello World</div>
-						</div>
-					</div>
-
-
-					<div className='container'>
-						<img src={template} />
-						<div class="overlay">
-							<div class="text">Hello World</div>
-						</div>
-					</div>
-
-
-					<div className='container'>
-						<img src={template} />
-						<div class="overlay">
-							<div class="text">Hello World</div>
-							<button className='add-btn'>Add</button>
-						</div>
-					</div>
-
-
-				</div>
-
+			</div>
 			</section>
 
 		</>
