@@ -1,9 +1,9 @@
 * {
     color: white;
 }
-/* .page-container {
-    padding: 10em;
-} */
+.page-container {
+    padding: 0 5em;
+}
 
 .edit-menu-item-container {
     display: flex;
@@ -19,6 +19,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.column p {
+    text-align: left;
 }
 
 .course-img {
