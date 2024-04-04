@@ -24,10 +24,15 @@ function Menu() {
 							<img className="image" src={course.image} alt={course.title}/>
 							<div className="overlay">
 							<div className='menu-info'>
-							<h2>{course.title}</h2>
+							<h2 className='menu-title'>{course.title}</h2>
 							<p>{course.description}</p>
-							<p>{course.contains}</p>
+							<p>{course.contains} </p>
+							<p>Contains: {course.contains}</p>
+
+							<div className='button-row'>
 							<h4>{course.price}</h4>
+							<button>Add</button>
+							</div>
 							</div>
 						</div>
 					</div>
