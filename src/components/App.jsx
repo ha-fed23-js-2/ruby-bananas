@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import LandingPage from './components/LandingPage/LandingPage'
+import LandingPage from './LandingPage/LandingPage'
 
 function App() {
 
