@@ -33,7 +33,7 @@ function NavMenu() {
 			</select>
 			</div>
 
-			<div className='count'> {selectedCourses}/{requiredCourses} </div>
+			<div className='count'> Selected dishes: {selectedCourses} of {requiredCourses}</div>
 			<div className='CTA'><button >Proceed</button></div>
 
 		</header>
