@@ -35,6 +35,7 @@ function NavMenu() {
 
 			<p className='dishes-count'> Selected dishes: {selectedCourses}</p>
 			<p className='dishes-count'>Minimum dishes: {requiredCourses} </p>
+			<p>TEST</p>
 			<button className='proceed-btn CTA' 
 			disabled={selectedCourses < requiredCourses} 
 			>Proceed to 🛒{selectedCourses}
