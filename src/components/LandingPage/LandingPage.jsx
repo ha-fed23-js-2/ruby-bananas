@@ -4,6 +4,7 @@ import Header from '../Header/HeaderPage'
 import './LandingPage.css'
 
 
+
 function LandingPage() {
 
 	return (
@@ -18,15 +19,11 @@ function LandingPage() {
 					<div>experience</div>
 				</div>
 
-
 				<div className='arrow-div'>
-
 					<button> ↓ </button>
 				</div>
 
-
-
-
+				<img src="./MASAFEJUJA.svg"/>
 
 			</section>
 

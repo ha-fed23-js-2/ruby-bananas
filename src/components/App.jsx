@@ -3,6 +3,7 @@ import './App.css'
 import LandingPage from './LandingPage/LandingPage'
 import MenuPage from './MenuPage/Menu'
 import EditMenu from './EditMenu/EditMenu'
+import LoginPage from './Login/Login'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <LandingPage />
     <MenuPage />
     <EditMenu/>
+    <LoginPage/>
     </>
   )
 }
