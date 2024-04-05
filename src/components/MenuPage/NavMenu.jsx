@@ -33,11 +33,13 @@ function NavMenu() {
 			</select>
 			</div>
 
-			<div className='count'> Selected dishes: {selectedCourses}</div>
-			<div>Minimum dishes: {requiredCourses} </div>
-			<div className='CTA'>
-				<button className='proceed-btn' disabled={selectedCourses < requiredCourses} onClick={() => console.log("hej")}>Proceed</button>
-			</div>
+			<p className='dishes-count'> Selected dishes: {selectedCourses}</p>
+			<p className='dishes-count'>Minimum dishes: {requiredCourses} </p>
+			<button className='proceed-btn CTA' 
+			disabled={selectedCourses < requiredCourses} 
+			>Proceed to 🛒{selectedCourses}
+			</button>
+		
 
 		</header>
 

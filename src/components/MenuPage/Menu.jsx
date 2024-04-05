@@ -12,7 +12,13 @@ function Menu( ) {
 			set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
 
 		}
-		} 
+	} 
+
+	function removeFromBasket() {
+		if (selectedCourses > 0)
+		set ( (state ) => ({ selectedCourses: state.selectedCourses - 1}))
+	}
+
 		
 
 	return (
@@ -38,6 +44,7 @@ function Menu( ) {
 							<div className='button-row'>
 							<h4>${course.price}</h4>
 							<button onClick={addToBasket}>Add</button>
+							<button onClick={removeFromBasket}>Remove</button>
 							</div>
 							</div>
 						</div>
