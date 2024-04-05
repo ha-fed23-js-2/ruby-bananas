@@ -1,18 +1,24 @@
-import { useState } from 'react'
-
-
+import { navStore } from './navStore';
 import './Menu.css'
 import NavMenu from './NavMenu'
 import courses from './menuList.js'
 
-function Menu() {
+function Menu( ) {
+
+	const {selectedCourses, set, requiredCourses} = navStore();
+
+	function addToBasket() {
+		if (selectedCourses < requiredCourses) {
+			set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
+
+		}
+		} 
+		
 
 	return (
 
 		<>
 		<NavMenu/>
-
-
 
 			<section className='gallerySection'>
 
@@ -31,7 +37,7 @@ function Menu() {
 
 							<div className='button-row'>
 							<h4>${course.price}</h4>
-							<button>Add</button>
+							<button onClick={addToBasket}>Add</button>
 							</div>
 							</div>
 						</div>

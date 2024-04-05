@@ -4,7 +4,7 @@ import './NavMenu.css'
 
 function NavMenu() {
 
-	const {guest, courses, requiredCourses, inc, set} = navStore();
+	const {selectedCourses, requiredCourses, inc, set} = navStore();
 
 	function handleGuestChange(event) {
 		const selectedGuests = event.target.value
@@ -15,8 +15,9 @@ function NavMenu() {
 			//  courses: updatedCourses,
 			 requiredCourses: updatedRequiredCourses,
 			});
-	
 	}
+
+
 
 	return (
 
@@ -32,8 +33,7 @@ function NavMenu() {
 			</select>
 			</div>
 
-			<div className='count'> {courses}/{requiredCourses} </div>
-
+			<div className='count'> {selectedCourses}/{requiredCourses} </div>
 			<div className='CTA'><button >Proceed</button></div>
 
 		</header>
