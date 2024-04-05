@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import './login.css'; // Ensure your styles are defined here
+import './login.css';
 
-const Letter = ({ letter, onLetterClick }) => {
+const Letter = ({ letter, onLetterClick, isWrong }) => {
 	const [isClicked, setIsClicked] = useState(false);
 
 	const handleClick = () => {
 		setIsClicked(true);
-		setTimeout(() => setIsClicked(false), 200); // Reset isClicked to false after 200 ms
+		setTimeout(() => setIsClicked(false), 200);
 		onLetterClick(letter);
 	};
 
 	return (
 		<span
-			className={`letter ${isClicked ? 'clicked' : ''}`}
+			className={`letter ${isClicked ? 'clicked' : ''} ${isWrong ? 'wrong' : ''}`}
 			onClick={handleClick}
 		>
 			{letter}
@@ -23,7 +23,8 @@ const Letter = ({ letter, onLetterClick }) => {
 const LoginPage = () => {
 	const [input, setInput] = useState('');
 	const [correctPassword, setCorrectPassword] = useState(false);
-	const words = ["MASA", "FEJUJA"]; // Split the logo into words for separate lines
+	const [isWrong, setIsWrong] = useState(false);
+	const words = ["MASA", "FEJUJA"];
 	const password = "MUMS";
 
 	const handleLetterClick = (letter) => {
@@ -33,10 +34,12 @@ const LoginPage = () => {
 			setTimeout(() => {
 				setCorrectPassword(false);
 				setInput('');
-			}, 1000);
+			}, 600);
 			alert('Välkommen!');
 		} else if (!password.startsWith(newInput)) {
+			setIsWrong(true);
 			setInput('');
+			setTimeout(() => setIsWrong(false), 600);
 		} else {
 			setInput(newInput);
 		}
@@ -47,7 +50,7 @@ const LoginPage = () => {
 			{words.map((word, wordIndex) => (
 				<div key={wordIndex}>
 					{word.split('').map((letter, index) => (
-						<Letter key={index} letter={letter} onLetterClick={handleLetterClick} />
+						<Letter key={index} letter={letter} onLetterClick={handleLetterClick} isWrong={isWrong} />
 					))}
 				</div>
 			))}
