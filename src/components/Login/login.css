@@ -16,11 +16,10 @@
 }
 
 .letter:hover {
-  color: rgb(117, 117, 117); /* Hover color */
+  color: rgb(117, 117, 117);
 }
-
 .clicked {
-  color: #009688 /* Color for a click blink */
+  color: #009688;
 }
 
 .correct {
@@ -28,7 +27,7 @@
 }
 
 .wrong {
-  animation: redBlink 600ms 2; /* Runs for 300ms, two times */
+  animation: redBlink 600ms 2;
 }
 
 @keyframes redBlink {

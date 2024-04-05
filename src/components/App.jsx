@@ -4,6 +4,7 @@ import LandingPage from './LandingPage/LandingPage'
 import MenuPage from './MenuPage/Menu'
 import EditMenu from './EditMenu/EditMenu'
 import LoginPage from './Login/Login'
+import Form from './Form/Form'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <MenuPage />
     <EditMenu/>
     <LoginPage/>
+    <Form/>
     </>
   )
 }
