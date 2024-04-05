@@ -3,6 +3,9 @@ import './Menu.css'
 import NavMenu from './NavMenu'
 import courses from './menuList.js'
 
+//TODO: skapa ny branch och ny component för shopping cart
+//TODO: Skapa en ny lista i shopping cart och lägg till listobjektet man klickar på
+
 function Menu( ) {
 
 	const {selectedCourses, set, requiredCourses} = navStore();
