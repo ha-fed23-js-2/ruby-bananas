@@ -8,27 +8,20 @@ function LandingPage() {
 
 	return (
 		<>
-			<section className='landingPage'>
+		<div className='landing-page-wrapper'>
 				<Header />
-				<div className='welcome-text'>
-					<div>a</div>
-					<div>five</div>
-					<div>star</div>
-					<div>tasting</div>
-					<div>experience</div>
-				</div>
-
-
+			<section className='landingPage'>
+					<p>a</p>
+					<p>five</p>
+					<p>star</p>
+					<p>tasting</p>
+					<p>experience</p>
 				<div className='arrow-div'>
-
 					<button> ↓ </button>
 				</div>
-
-
-
-
-
 			</section>
+
+		</div>
 
 		</>
 	)

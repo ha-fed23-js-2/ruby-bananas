@@ -5,30 +5,38 @@
 	margin: 0;
 }
 
-.landingPage{
-	width: 100%; height: 80vh;
+
+.landing-page-wrapper {
+	width: 100%; height: 100vh;
 	background: linear-gradient( #000000bf,#0000007d),
 	url(./background.webp);
 	background-size: cover;
-
 }
 
 
 .landingPage{
-	width: 100%
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	font-family: italiana;
+	align-items: start;
+	color: white;
+	font-size: 7vh;
+	padding-left: 0.3em;
+}
+.landingPage p{
+	margin-left: 0;
+	font-family: italiana;
+	color: white;
+	font-size: 7vh;
 }
 
 
-.welcome-text > div{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+
+.welcome-text{
 	padding-left: 1em;
-	font-family: italiana;
-	color: white;
-	text-align: left;
-	font-size: 7vh;
-	padding-left: 0.3em;
 }
 
 .arrow-div{
