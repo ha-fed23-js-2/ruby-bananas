@@ -8,10 +8,7 @@ function Menu( ) {
 	const {selectedCourses, set, requiredCourses} = navStore();
 
 	function addToBasket() {
-		if (selectedCourses < requiredCourses) {
-			set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
-
-		}
+		set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
 	} 
 
 	function removeFromBasket() {
