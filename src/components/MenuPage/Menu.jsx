@@ -30,7 +30,7 @@ function Menu() {
 							<p>Contains: {course.contains}</p>
 
 							<div className='button-row'>
-							<h4>{course.price}</h4>
+							<h4>${course.price}</h4>
 							<button>Add</button>
 							</div>
 							</div>
