@@ -1,8 +1,22 @@
-
+import { navStore } from './navStore';
 import './NavMenu.css'
 
 
 function NavMenu() {
+
+	const {guest, courses, requiredCourses, inc, set} = navStore();
+
+	function handleGuestChange(event) {
+		const selectedGuests = event.target.value
+		const updatedCourses = selectedGuests;
+        const updatedRequiredCourses = selectedGuests * 3;
+        inc(); 
+        set({ guest: selectedGuests,
+			 courses: updatedCourses,
+			 requiredCourses: updatedRequiredCourses,
+			});
+	
+	}
 
 	return (
 
@@ -10,7 +24,7 @@ function NavMenu() {
 
 			<div>
 			<label> Guests: </label>
-			<select>
+			<select onChange={handleGuestChange}>
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -20,7 +34,7 @@ function NavMenu() {
 			</select>
 			</div>
 
-			<div className='count'> 4/6 </div>
+			<div className='count'> {courses}/{requiredCourses} </div>
 
 			<div className='CTA'><button >Proceed</button></div>
 
