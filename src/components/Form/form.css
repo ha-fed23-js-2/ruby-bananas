@@ -8,12 +8,11 @@
 }
 
 .reservation-form {
-  max-width: 500px; /* Adjust the width as necessary */
+  max-width: 500px;
   margin: auto;
   padding: 20px;
-  color: #000; /* Text color */
-  font-family: 'Arial', sans-serif; /* Replace with your desired font */
-}
+  color: #000;
+  font-family: 'Arial', sans-serif;
 
 .reservation-form h1 {
   font-size: 4em;
@@ -31,14 +30,14 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  background-color: #000; /* Black background */
-  border: 1px solid #ddd; /* Light border */
-  color: #fff; /* White text */
+  background-color: #000;
+  border: 1px solid #ddd;
+  color: #fff;
   font-size: 16px;
 }
 
 .reservation-form textarea {
-  height: 100px; /* Set a fixed height for textarea */
+  height: 100px;
 }
 
 .booking-conditions {
@@ -49,8 +48,8 @@
 .reservation-form button {
   width: 100%;
   padding: 15px;
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
+  background-color: #000;
+  color: #fff;
   border: 1px solid white;
   font-size: 16px;
   cursor: pointer;
