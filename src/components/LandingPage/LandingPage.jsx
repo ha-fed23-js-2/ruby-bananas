@@ -23,8 +23,6 @@ function LandingPage() {
 					<button> ↓ </button>
 				</div>
 
-				<img src="./MASAFEJUJA.svg"/>
-
 			</section>
 
 		</>
