@@ -27,7 +27,7 @@ function NavMenu() {
 
 			<div className='count'>{totalDishes} / {Guests} guests)</div>
 
-			<div className='CTA'><button>Proceed</button></div>
+			<div className='CTA'><button className='add-btn'>Proceed</button></div>
 		</header>
 	);
 }
