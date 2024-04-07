@@ -45,7 +45,7 @@
   text-align: left;
   padding: 1em;
   margin: 0;
-  
+
 
 }
 
@@ -116,3 +116,15 @@
   margin: 0;
 }
 
+@media (max-width: 750px){
+
+
+
+.gallery{
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	max-width: 100%;
+
+}
+
+}

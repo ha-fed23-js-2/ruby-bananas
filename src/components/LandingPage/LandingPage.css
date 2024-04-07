@@ -13,12 +13,6 @@
 
 }
 
-
-.landingPage{
-	width: 100%
-}
-
-
 .welcome-text > div{
 	display: flex;
 	flex-direction: column;
@@ -27,7 +21,7 @@
 	font-family: italiana;
 	color: white;
 	text-align: left;
-	font-size: 10vh;
+	font-size: 4em;
 	padding-left: 0.3em;
 }
 
