@@ -4,7 +4,7 @@ import {editMenuStore} from './data/editMenuStore'
 
 function EditMenuForm() {
 
-    const {addMenuItem, menu} = editMenuStore((state) => { return { addMenuItem: state.addMenuItem}})
+    const {addMenuItem} = editMenuStore((state) => ({ addMenuItem: state.addMenuItem}))
 
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
@@ -22,10 +22,16 @@ function EditMenuForm() {
         console.log(newItem);
     }
 
+    function handleImageChange(e) {
+        const file = e.target.files[0]
+        const imageUrl = URL.createObjectURL(file)
+        setImage(imageUrl)
+    }
+
     return (
         <>
         <div className="form-container">
-            <button className="" onChange={(e) => setImage(e.target.value)}>Add img +</button>
+            <input className="" type='file' onChange={handleImageChange}/>
             <div className="form-column">
                 <input type="text" placeholder="Title" onChange={(e) => setName(e.target.value)} />
                 <input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />

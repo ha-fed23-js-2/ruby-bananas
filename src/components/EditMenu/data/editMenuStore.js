@@ -17,5 +17,8 @@ export const editMenuStore = create((set) => ({
         }
     ]
 
-    }))
+    })),
+
+    deleteMenuItem: (id)=>
+    set((state) => ({menu: state.menu.filter(item => item.id !== id) }))
 }))
