@@ -12,7 +12,7 @@ function NavMenu() {
 	const totalDishes = Guests * 3;
 
 	return (
-		<header className='navbar'>
+		<header className='navbar' id="menuPage">
 			<div>
 				<label> Guests: </label>
 				<select onChange={handleGuest} value={Guests}>

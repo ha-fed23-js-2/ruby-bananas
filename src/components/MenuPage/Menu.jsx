@@ -5,7 +5,7 @@ import useStore from './store.js';
 
 function Menu() {
 	const courses = useStore((state) => state.courses);
-	const addToBasket = useStore((state) => state.addToBasket);
+	const addToCheckout = useStore((state) => state.addToCheckout);
 
 	return (
 		<>
@@ -19,9 +19,9 @@ function Menu() {
 								<div className='menu-info'>
 									<h2 className='menu-title'>{course.title}</h2>
 									<h4 className='menu-decription'>{course.description}</h4>
-									<h5 className='menu-contains'>Taste {course.contains}</h5>
+									<h5 className='menu-contains'>Taste <h5 className='menu-contains-italic'>{course.contains}</h5></h5>
 									<div className='button-row'>
-										<button className='add-btn' onClick={() => addToBasket(course)}>Add ${course.price}</button>
+										<button className='add-btn' onClick={() => addToCheckout(course)}>Add ${course.price} + {addToCheckout.state}</button>
 									</div>
 								</div>
 							</div>

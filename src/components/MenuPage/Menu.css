@@ -46,15 +46,18 @@
   padding: 1em;
   margin: 0;
   
+
 }
 
 .menu-title{
   margin: 0;
+  padding-bottom: 0.5em;
 }
 
 .menu-decription {
   font-style: italic;
   margin-bottom: 12px;
+  font-weight: 500;
 
 }
 
@@ -62,6 +65,11 @@
   font-weight: 600;
   margin: 0;
   text-align: left;
+}
+
+.menu-contains-italic{
+  font-style: italic;
+
 }
 
 .overlay {
@@ -98,7 +106,7 @@
   margin: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between
+  justify-content: flex-end
 }
 
 .add-btn{

@@ -6,7 +6,7 @@ const useStore = create((set) => ({
 	courses: courses,
 	basket: [],
 
-	addToBasket: (course) => set((state) => {
+	addToCheckout: (course) => set((state) => {
 		const isCourseInBasket = state.basket.some((item) => item.id === course.id);
 		if (!isCourseInBasket) {
 			return { basket: [...state.basket, course] };
