@@ -4,13 +4,14 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #1a1a1a ;
+  background-color: #000000 ;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

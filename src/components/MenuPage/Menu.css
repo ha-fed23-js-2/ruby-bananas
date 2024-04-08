@@ -40,18 +40,37 @@
 
 
 .menu-info{
-
   display: flex;
   width: 100%; height: 100%;
   justify-content: flex-end;
   flex-direction: column;
-  align-items: center;
   text-align: left;
   padding: 1em;
   line-height: 2.5vh;
 }
 
+.menu-title{
+  margin: 0;
+  padding-bottom: 0.5em;
+}
 
+.menu-decription {
+  font-style: italic;
+  margin-bottom: 12px;
+  font-weight: 500;
+
+}
+
+.menu-contains{
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+.menu-contains-italic{
+  font-style: italic;
+
+}
 
 .overlay {
   position: absolute;
@@ -81,15 +100,30 @@
 
 }
 
-.add-btn{
-	position: absolute;
-  top: 80%;
-  left: 50%;
-}
-
 .button-row{
-
+  padding-top: 1em;
+  margin: 0;
   width: 100%;
   display: flex;
-  justify-content: space-evenly
+  justify-content: flex-end
+}
+
+.add-btn{
+  width: 40%;
+  padding: 1em;
+  background-color: #00000000;
+  margin: 0;
+}
+
+@media (max-width: 750px){
+
+
+
+.gallery{
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	max-width: 100%;
+
+}
+
 }

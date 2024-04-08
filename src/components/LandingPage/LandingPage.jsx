@@ -1,27 +1,33 @@
 import { useState } from 'react'
-import Header from '../Header/HeaderPage'
+import Header from '../Header/Header'
+import Menu from '../MenuPage/Menu'
+import Footer from '../Footer/Footer'
 
 import './LandingPage.css'
-
 
 function LandingPage() {
 
 	return (
 		<>
-		<div className='landing-page-wrapper'>
-				<Header />
 			<section className='landingPage'>
-					<p>a</p>
-					<p>five</p>
-					<p>star</p>
-					<p>tasting</p>
-					<p>experience</p>
+				<Header />
+				<div className='welcome-text'>
+					<div>a</div>
+					<div>five</div>
+					<div>star</div>
+					<div>tasting</div>
+					<div>experience</div>
+				</div>
+
 				<div className='arrow-div'>
 					<button> ↓ </button>
 				</div>
+
+				<img src="./MASAFEJUJA.svg" />
 			</section>
 
-		</div>
+			<Menu />
+			<Footer />
 
 		</>
 	)
