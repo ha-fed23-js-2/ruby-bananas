@@ -28,6 +28,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket }) {
           </li>
         ))}
       </ul>
+	  <p className='total-amount'>Total amount: ???</p>
     </div>
   );
 }

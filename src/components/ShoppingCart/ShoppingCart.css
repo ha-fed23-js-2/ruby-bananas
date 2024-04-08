@@ -14,6 +14,10 @@
 
 .shopping-cart-item {
 	display: flex;
+	margin-top: 0.5em;
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+	padding-bottom: 1em;
 }
 
 
@@ -51,4 +55,10 @@
 
 .back-arrow {
 	font-size: 2em;
+}
+
+.total-amount {
+	text-align: right;
+	margin-right: 1em;
+	margin-top: 2em;
 }
