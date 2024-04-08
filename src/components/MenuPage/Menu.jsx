@@ -2,15 +2,20 @@ import { navStore } from './navStore';
 import './Menu.css'
 import NavMenu from './NavMenu'
 import courses from './menuList.js'
+import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
+import { useState } from 'react';
 
 //TODO: skapa ny branch och ny component för shopping cart
 //TODO: Skapa en ny lista i shopping cart och lägg till listobjektet man klickar på
 
 function Menu( ) {
 
-	const {selectedCourses, set, requiredCourses} = navStore();
+	const {selectedCourses, set} = navStore();
+	const [shoppingCart, setShoppingCart] = useState([]); 
 
-	function addToBasket() {
+	function addToBasket(course) {
+		setShoppingCart([...shoppingCart, course]);
+		console.log(shoppingCart);
 		set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
 	} 
 
@@ -43,7 +48,7 @@ function Menu( ) {
 
 							<div className='button-row'>
 							<h4>${course.price}</h4>
-							<button onClick={addToBasket}>Add</button>
+							<button onClick={() => addToBasket(course)}>Add</button>
 							<button onClick={removeFromBasket}>Remove</button>
 							</div>
 							</div>
@@ -53,6 +58,8 @@ function Menu( ) {
 
 			</div>
 			</section>
+
+			<ShoppingCart shoppingCart={shoppingCart}/>
 
 		</>
 	)
