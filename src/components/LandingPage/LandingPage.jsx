@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import Header from '../Header/HeaderPage'
+import Menu from '../MenuPage/Menu'
+import Footer from '../Footer/Footer'
 
 import './LandingPage.css'
 
@@ -22,8 +24,10 @@ function LandingPage() {
 				</div>
 
 				<img src="./MASAFEJUJA.svg"/>
-
 			</section>
+
+			<Menu />
+			<Footer />
 
 		</>
 	)

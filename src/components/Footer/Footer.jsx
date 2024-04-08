@@ -24,9 +24,6 @@ function Footer() {
 				</div>
 
 
-
-
-
 			</section>
 
 		</>
