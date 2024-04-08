@@ -1,3 +1,22 @@
+.guest-navbar{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	padding: 1em 2em ;
+
+}
+
+.navbar select option {
+	color: black;
+}
+
+.proceed-btn:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+
 .navbar {
 	width: 100%;
 	color: white;
