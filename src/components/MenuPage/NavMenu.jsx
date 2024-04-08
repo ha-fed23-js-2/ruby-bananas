@@ -1,51 +1,50 @@
-import './NavMenu.css';
-import React, { useState } from 'react';
-import {navStore} from './navStore'
+import { navStore } from './navStore';
+import './NavMenu.css'
+
 
 function NavMenu() {
-	const [Guests, setGuests] = useState(1);
 
-	const handleGuest = (event) => {
-		setGuests(Number(event.target.value));
-	};
-
-	// Calculating total dishes (3 dishes per guest)
-	const totalDishes = Guests * 3;
-
-	const { guest, courses, requiredCourses, inc, set } = navStore();
+	const {selectedCourses, requiredCourses, inc, set} = navStore();
 
 	function handleGuestChange(event) {
 		const selectedGuests = event.target.value
 		// const updatedCourses = ;
-		const updatedRequiredCourses = selectedGuests * 3;
-		inc();
-		set({
-			guest: selectedGuests,
+        const updatedRequiredCourses = selectedGuests * 3;
+        inc(); 
+        set({ guest: selectedGuests,
 			//  courses: updatedCourses,
-			requiredCourses: updatedRequiredCourses,
-		});
-
+			 requiredCourses: updatedRequiredCourses,
+			});
 	}
 
+
+
 	return (
-		<header className='navbar' id="menuPage">
+
+		<header className='guest-navbar'>
+
 			<div>
-				<label> Guests: </label>
-				<select onChange={handleGuest} value={Guests}>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-				</select>
+			<label> Guests: </label>
+			<select onChange={handleGuestChange}>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			</select>
 			</div>
 
-			<div className='count'>{totalDishes} / {Guests} guests)</div>
+			<p className='dishes-count'> Selected dishes: {selectedCourses}</p>
+			<p className='dishes-count'>Minimum dishes: {requiredCourses} </p>
+			<button className='proceed-btn CTA' 
+			disabled={selectedCourses < requiredCourses} 
+			>Proceed to 🛒{selectedCourses}
+			</button>
+		
 
-			<div className='CTA'><button className='add-btn'>Proceed</button></div>
 		</header>
-	);
+
+	)
 }
 
-export default NavMenu;
+
+export default NavMenu
