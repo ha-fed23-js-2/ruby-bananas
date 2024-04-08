@@ -20,5 +20,17 @@ export const editMenuStore = create((set) => ({
     })),
 
     deleteMenuItem: (id)=>
-    set((state) => ({menu: state.menu.filter(item => item.id !== id) }))
+    set((state) => ({menu: state.menu.filter(item => item.id !== id) })),
+    
+
+    updateMenuItem: (updatedMenuItem) => set((state) => ({
+        menu: state.menu.map(item => 
+            item.id === updatedMenuItem.id ? {
+                ...item,
+                name: updatedMenuItem.name,
+                description: updatedMenuItem.description,
+                price: updatedMenuItem.price,
+                image: updatedMenuItem.image
+            } : item)
+    }))  
 }))
