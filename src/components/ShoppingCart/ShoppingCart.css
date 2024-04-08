@@ -14,7 +14,6 @@
 
 .shopping-cart-item {
 	display: flex;
-	position: relative;
 }
 
 
@@ -27,14 +26,12 @@
 
 
 .shopping-cart-img {
-		max-width: 10em;
-		max-height: 20em;
+	max-width: 10em;
+	max-height: 20em;
 	
 }
 
 .shopping-cart-remove-btn {
-	position: relative;
-	top: -90px;
 	margin-right: 0.5em;
 	text-align: right;
 	
