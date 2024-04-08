@@ -11,9 +11,10 @@ function App() {
 
   return (
   <>
-    <LandingPage id="#landing"/>
-      <MenuPage id="#menu" />
-    <Footer />
+      <LandingPage/>
+      <MenuPage />
+      <EditMenu />
+      <Footer />
     </>
   )
 }
