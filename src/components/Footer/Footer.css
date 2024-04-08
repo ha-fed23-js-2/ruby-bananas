@@ -56,3 +56,17 @@
 	width:100%;
 	border: 1px solid rgb(150, 150, 150);
 }
+
+@media (max-width: 500px){
+
+	.footer-info{
+	display: flex;
+	flex-direction: column;
+
+	}
+	.line{
+	width: 75%;
+
+	}
+
+}

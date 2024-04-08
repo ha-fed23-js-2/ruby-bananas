@@ -13,9 +13,6 @@ function App() {
   <>
     <LandingPage id="#landing"/>
       <MenuPage id="#menu" />
-    <EditMenu/>
-    <LoginPage/>
-    <Form/>
     <Footer />
     </>
   )
