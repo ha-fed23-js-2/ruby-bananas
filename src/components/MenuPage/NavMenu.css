@@ -1,15 +1,10 @@
-.guest-navbar{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.navbar {
+	width: 100%;
 	color: white;
-	padding: 1em 2em ;
-
+	display: flex;
+	justify-content: space-evenly;
 }
 
-.navbar select option {
-	color: black;
+.navbar > *{
+	width: 33%;
 }
-
-
-
