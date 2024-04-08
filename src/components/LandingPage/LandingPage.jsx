@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import Header from '../Header/Header'
+import Menu from '../MenuPage/Menu'
+import Footer from '../Footer/Footer'
 
 import './LandingPage.css'
-
-
 
 function LandingPage() {
 
 	return (
 		<>
-		<div className='landingPage'>
+			<section className='landingPage'>
 				<Header />
 				<div className='welcome-text'>
 					<div>a</div>
@@ -20,10 +20,14 @@ function LandingPage() {
 				</div>
 
 				<div className='arrow-div'>
-					<button a href="#footer"> ↓ </button>
+					<button> ↓ </button>
 				</div>
 
-		</div>
+				<img src="./MASAFEJUJA.svg" />
+			</section>
+
+			<Menu />
+			<Footer />
 
 		</>
 	)
