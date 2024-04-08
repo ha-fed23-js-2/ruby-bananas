@@ -19,7 +19,9 @@ function Menu( ) {
 		set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
 	} 
 
-	function removeFromBasket() {
+	function removeFromBasket(courseToRemove) {
+		const updatedCart = shoppingCart.filter(course => course !== courseToRemove);
+    	setShoppingCart(updatedCart);
 		if (selectedCourses > 0)
 		set ( (state ) => ({ selectedCourses: state.selectedCourses - 1}))
 	}
@@ -59,7 +61,7 @@ function Menu( ) {
 			</div>
 			</section>
 
-			<ShoppingCart shoppingCart={shoppingCart}/>
+			<ShoppingCart shoppingCart={shoppingCart} removeFromBasket={removeFromBasket}/>
 
 		</>
 	)

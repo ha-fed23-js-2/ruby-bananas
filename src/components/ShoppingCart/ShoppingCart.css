@@ -25,6 +25,7 @@
 }
 
 
+
 .shopping-cart-img {
 	max-width: 10em;
 	max-height: 20em;
@@ -32,17 +33,16 @@
 }
 
 .shopping-cart-remove-btn {
-	margin-right: 0.5em;
+	border: none;
 	text-align: right;
-	
 }
 
 .shopping-cart-title {
-	/* text-decoration: underline; */
+
 }
 
 .shopping-cart-description {
-
+	
 }
 
 .shopping-cart-price {
