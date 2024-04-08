@@ -10,6 +10,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket }) {
     <div className='shopping-cart-container'>
       <h1>Shopping Cart</h1>
 	  <span className='back-arrow'>&#8656;</span>
+	  
       <ul className='shopping-cart-list'>
         {shoppingCart.map((item, index) => (
           <li className='shopping-cart-item' key={index}>

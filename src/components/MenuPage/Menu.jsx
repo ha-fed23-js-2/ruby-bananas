@@ -15,15 +15,19 @@ function Menu( ) {
 
 	function addToBasket(course) {
 		setShoppingCart([...shoppingCart, course]);
-		console.log(shoppingCart);
 		set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
 	} 
 
 	function removeFromBasket(courseToRemove) {
-		const updatedCart = shoppingCart.filter(course => course !== courseToRemove);
-    	setShoppingCart(updatedCart);
-		if (selectedCourses > 0)
+		const index = shoppingCart.findIndex(item => item === courseToRemove);
+    if (index !== -1) {
+        const updatedCart = [...shoppingCart.slice(0, index), ...shoppingCart.slice(index + 1)];
+        setShoppingCart(updatedCart);
+    }
+	if (selectedCourses > 0) {
 		set ( (state ) => ({ selectedCourses: state.selectedCourses - 1}))
+	}
+		
 	}
 
 		
@@ -51,7 +55,7 @@ function Menu( ) {
 							<div className='button-row'>
 							<h4>${course.price}</h4>
 							<button onClick={() => addToBasket(course)}>Add</button>
-							<button onClick={removeFromBasket}>Remove</button>
+							{/* <button onClick={removeFromBasket}>Remove</button> */}
 							</div>
 							</div>
 						</div>
