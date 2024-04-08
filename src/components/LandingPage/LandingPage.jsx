@@ -3,8 +3,6 @@ import Header from '../Header/HeaderPage'
 
 import './LandingPage.css'
 
-
-
 function LandingPage() {
 
 	return (
