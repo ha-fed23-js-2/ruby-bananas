@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Header from '../Header/HeaderPage'
+import Header from '../Header/Header'
 
 import './LandingPage.css'
 

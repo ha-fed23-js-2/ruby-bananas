@@ -19,7 +19,7 @@ function Menu() {
 								<div className='menu-info'>
 									<h2 className='menu-title'>{course.title}</h2>
 									<h4 className='menu-decription'>{course.description}</h4>
-									<h5 className='menu-contains'>Taste <h5 className='menu-contains-italic'>{course.contains}</h5></h5>
+
 									<div className='button-row'>
 										<button className='add-btn' onClick={() => addToCheckout(course)}>Add ${course.price} + {addToCheckout.state}</button>
 									</div>
