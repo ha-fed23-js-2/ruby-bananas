@@ -11,12 +11,12 @@ import { useState } from 'react';
 function Menu( ) {
 
 	const {selectedCourses, set} = navStore();
-	const [shoppingCart, setShoppingCart] = useState([]); 
+	const [shoppingCart, setShoppingCart] = useState([]);
 
 	function addToBasket(course) {
 		setShoppingCart([...shoppingCart, course]);
 		set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
-	} 
+	}
 
 	function removeFromBasket(courseToRemove) {
 		const index = shoppingCart.findIndex(item => item === courseToRemove);
@@ -27,17 +27,18 @@ function Menu( ) {
 	if (selectedCourses > 0) {
 		set ( (state ) => ({ selectedCourses: state.selectedCourses - 1}))
 	}
-		
+
 	}
 
-		
+
 
 	return (
 
 		<>
 		<NavMenu/>
 
-			<section className='gallerySection'>
+			<section id="menu" className='gallerySection'>
+
 
 				<div className='gallery'>
 

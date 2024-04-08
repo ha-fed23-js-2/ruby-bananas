@@ -7,7 +7,7 @@ function Footer() {
 
 	return (
 		<>
-			<section className='footerSection'>
+			<section className='footerSection' id="footer">
 
 			<div className='footer-logo'>
 </div>
