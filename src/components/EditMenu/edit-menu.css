@@ -1,83 +1,39 @@
-.page-container {
+.edit-page {
     padding: 0 5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    color: white;
 }
 
 .edit-menu-item-container {
+    border-top: 1px solid white;
+    padding-top: 2em;
     display: flex;
-    margin: 5em 0 0 0;
+    gap: 1em;
+    margin: 3em 0 0 0;
     justify-content: center;
+    width: 100%;
 }
 
-.edit-menu-item-container > * {
-    padding: 1em;
+article{
+    width: 100%;
 }
-
-.hr {
-    width: auto;
-}
-
 .column {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 60%;
+
 }
 
-.column p {
-    text-align: left;
-    width: 100%;
-}
-
-.column h3 {
-    text-align: left;
-    width: 100%;
-}
-
-.course-img {
-    max-width: 10em;
-    max-height: 20em;
-}
 
 .column2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.column2 > button {
-    border: none;
-}
-
-.close {
-    max-width: 3em;
-    max-height: 3em;
-}
-
-.page-container {
-    padding: 0 5em;
-}
-
-.edit-menu-item-container {
-    display: flex;
-    margin: 5em 0 0 0;
-    justify-content: center;
-}
-
-.edit-menu-item-container > * {
-    padding: 1em;
-}
-
-.hr {
-    width: auto;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .column p,
@@ -86,16 +42,6 @@
     width: 100%;
 }
 
-.course-img {
-    max-width: 10em;
-    max-height: 20em;
-}
-
-.column2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 .column2 > button {
     border: none;
@@ -107,10 +53,26 @@
     width: 100%;
 }
 
+.course-img {
+    max-width: 10em;
+    max-height: 20em;
+}
+
+
 .close {
     max-width: 3em;
     max-height: 3em;
+    background-color: #00000000;
 }
+
+.edit-menu-button{
+    background-color: #00000000;
+}
+
+.edit-menu-button:hover{
+    color: #717171;
+}
+
 .line {
     width: 100%;
     border: 1px solid rgb(150, 150, 150);
@@ -198,7 +160,7 @@
 
 input {
     color: white;
-    border: 1px solid white;
+    border: 1px solid rgb(142, 142, 142);
     background-color: rgba(0, 0, 0, 0);
 }
 

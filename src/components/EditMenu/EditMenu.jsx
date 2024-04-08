@@ -9,7 +9,7 @@ import {editMenuStore} from './data/editMenuStore'
 function EditMenu() {
 const {menu} = editMenuStore((state) =>  ({menu: state.menu}))
 	return (
-		<div className="page-container">
+		<div className="edit-page">
 			<EditMenuForm/>
 			{menu.map((item, i) => (<EditMenuItem item={item} key={i}  />))}
 		</div>

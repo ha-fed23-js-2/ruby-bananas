@@ -30,17 +30,17 @@ function EditMenuItem({item}) {
         const imageUrl = URL.createObjectURL(file)
         setMenuItemImage(imageUrl)
     }
-	
+
 
 	return (
 		<article>
-		{editMode ? 
+		{editMode ?
 		<>
 		<span className="line"></span>
 			<div className="edit-menu-item-container">
-			
+
 			<input type="file" onChange={handleImageChange} />
-					
+
 					<div className="column">
 						<input type="text" defaultValue={menuItemName} onChange={(e) => setMenuItemName(e.target.value)} />
 						<input type="text" defaultValue={menuItemDescription} onChange={(e) => setMenuItemDescription(e.target.value)} />
@@ -54,36 +54,42 @@ function EditMenuItem({item}) {
 					</button>
 					<input type="text" defaultValue={menuItemPrice} onChange={(e) => setMenuItemPrice(e.target.value)} />
 				</div>
-				
+
 			</div>
-			
+
 			</>
 			:
 		<>
-		<span className="line"></span>
+
+					<></>
+
+
 			<div className="edit-menu-item-container">
-			
+
+
 					<img src={item.image} alt="" className='course-img' />
-					
 					<div className="column">
 						<h3>{item.name}</h3>
 						<p className="edit-menu-item-description">{item.description}</p>
 					</div>
+
 					<div className="column3">
-						<button onClick={() => setEditMode(true)}>Edit menu</button>
+						<button className="edit-menu-button" onClick={() => setEditMode(true)}>Edit</button>
 					</div>
-				<div className="column2">
+
+					<div className="column2">
 					<button onClick={() => deleteMenuItem(item.id) }>
-						<img src='./Vector.png' alt="" className='close' />
+						<img src="./Vector.png" alt="Delete" className='close' />
 					</button>
-					<p className="edit-menu-item-price">{item.price}</p>
+					<p className="edit-menu-item-price">${item.price}</p>
 				</div>
-				
+
 			</div>
-			
+
 		</>
 		}
 		</article>
+
 	)
 
 }
