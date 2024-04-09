@@ -7,13 +7,21 @@
 }
 
 .shopping-cart-list {
-	display: flex;
-	list-style-type: none;
-	flex-direction: column;
+    border-top: 1px solid white;
+    padding-top: 2em;
+    display: flex;
+    gap: 1em;
+    margin: 3em 0 0 0;
+    justify-content: center;
+	text-align: left;
+    width: 100%;
+
 }
 
 .shopping-cart-item {
 	display: flex;
+		gap: 1em;
+		align-items: center;
 }
 
 
@@ -29,12 +37,13 @@
 .shopping-cart-img {
 	max-width: 10em;
 	max-height: 20em;
-	
+
 }
 
 .shopping-cart-remove-btn {
 	border: none;
 	text-align: right;
+	background-color: #00000000;
 }
 
 .shopping-cart-title {
@@ -42,7 +51,7 @@
 }
 
 .shopping-cart-description {
-	
+
 }
 
 .shopping-cart-price {
