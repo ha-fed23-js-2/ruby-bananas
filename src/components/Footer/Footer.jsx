@@ -7,7 +7,7 @@ function Footer() {
 
 	return (
 		<>
-			<section className='footerSection'>
+			<section className='footerSection' id="footer">
 
 			<div className='footer-logo'>
 </div>
@@ -16,7 +16,7 @@ function Footer() {
 
 				<div className='arrow-div'>
 
-					<button> ↑ </button>
+					<button> <a href="#top"> ↑ </a></button>
 				</div>
 
 

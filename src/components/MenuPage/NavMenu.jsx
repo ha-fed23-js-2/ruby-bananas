@@ -1,5 +1,7 @@
 import { navStore } from './navStore';
 import './NavMenu.css'
+import { Link } from 'react-router-dom'
+
 
 
 function NavMenu() {
@@ -18,7 +20,7 @@ function NavMenu() {
 
 	return (
 
-		<header className='guest-navbar'>
+		<header id="menu" className='guest-navbar'>
 
 			<div>
 			<label> Guests: </label>
@@ -36,7 +38,7 @@ function NavMenu() {
 			disabled={shoppingCart.length < requiredDishes} 
 			>Proceed to 🛒{shoppingCart.length}
 			</button>
-		
+
 
 		</header>
 

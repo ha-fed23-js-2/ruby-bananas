@@ -4,7 +4,7 @@ import { create } from "zustand"
 export const editMenuStore = create((set) => ({
     menu: [],
     //funktion för att lägga till en Menu-Item
-    addMenuItem: (item) => 
+    addMenuItem: (item) =>
     set((state) => ({
         menu: [
             ...state.menu,
@@ -21,10 +21,10 @@ export const editMenuStore = create((set) => ({
 
     deleteMenuItem: (id)=>
     set((state) => ({menu: state.menu.filter(item => item.id !== id) })),
-    
+
 
     updateMenuItem: (updatedMenuItem) => set((state) => ({
-        menu: state.menu.map(item => 
+        menu: state.menu.map(item =>
             item.id === updatedMenuItem.id ? {
                 ...item,
                 name: updatedMenuItem.name,
@@ -32,5 +32,5 @@ export const editMenuStore = create((set) => ({
                 price: updatedMenuItem.price,
                 image: updatedMenuItem.image
             } : item)
-    }))  
+    }))
 }))

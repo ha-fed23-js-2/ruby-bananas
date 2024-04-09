@@ -39,7 +39,7 @@ function Menu( ) {
 		
 	}
 
-		
+
 
 	return (
 
@@ -47,6 +47,7 @@ function Menu( ) {
 		<NavMenu/>
 
 			<section className='gallerySection'>
+
 
 				<div className='gallery'>
 

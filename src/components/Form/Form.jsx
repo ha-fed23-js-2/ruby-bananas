@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import './form.css';
 
@@ -9,7 +10,19 @@ function ReservationForm() {
 	};
 
 	return (
+		<>
+		<header>
+				<div>
+				<Link to="/"><button>Back</button></Link>
+				</div>
+				<div className='logo'>
+				<img src="./logo.png"/>
+				</div>
+
+			</header>
+
 		<section className='formSection'>
+
 		<form onSubmit={handleSubmit} className="reservation-form">
 		<h1>We want to know about you</h1>
 				<div className="input-group">
@@ -27,6 +40,7 @@ function ReservationForm() {
 				<button type="submit">Book your experience</button>
 			</form>
 		</section>
+		</>
 	);
 }
 

@@ -2,18 +2,31 @@
 import logo from './logo.png'
 import './Header.css'
 
+import { Link } from 'react-router-dom'
+
 
 function Header () {
 
 	return (
 
-		<header className='navbar'>
-
-			<div></div>
+		<header className='header' id="top">
 
 			<div className='logo'><img src={logo} /></div>
 
-			<div className='CTA'><button>Hamburger</button></div>
+			<nav>
+				<ul>
+					<li>
+						<Link to="/">Hem</Link>
+						<Link to="/redigera">Redigera</Link>
+						<Link to="/login">Login</Link>
+						<Link to="/form">Form</Link>
+						<a href="#footer">Contact</a>
+					</li>
+				</ul>
+		</nav>
+
+
+
 
 		</header>
 
