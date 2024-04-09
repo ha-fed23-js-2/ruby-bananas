@@ -3,7 +3,7 @@ import courses from '../../MenuPage/menuList'
 
 console.log('courses: ', courses);
 export const editMenuStore = create((set) => ({
-    menu: [],
+    menu: [courses],
     //funktion för att lägga till en Menu-Item
     addMenuItem: (item) =>
     set((state) => ({
