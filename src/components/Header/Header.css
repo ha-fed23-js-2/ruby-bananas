@@ -3,6 +3,7 @@ header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 10vh;
 
 }
 header > *{
@@ -10,11 +11,13 @@ header > *{
 
 }
 
-.logo > img{
-	width: 160px; height: 160px;
+.logo * {
+	width: 240px; height: 240px;
+
 }
 
-nav *{
+
+nav * {
 	display: flex;
 	flex-direction: row;
 	gap: 1em;
