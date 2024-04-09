@@ -1,8 +1,7 @@
 import { create } from "zustand"
-
-
+import courses from '../../MenuPage/menuList'
 export const editMenuStore = create((set) => ({
-    menu: [],
+    menu: [courses],
     //funktion för att lägga till en Menu-Item
     addMenuItem: (item) =>
     set((state) => ({
