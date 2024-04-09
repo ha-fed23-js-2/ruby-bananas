@@ -7,21 +7,50 @@ function Footer() {
 
 	return (
 		<>
-			<section className='Footer'>
+			<section className='footerSection' id="footer">
 
-				<div className='welcome-text'>
-					<div>a</div>
-					<div>five</div>
-					<div>star</div>
-					<div>tasting</div>
-					<div>experience</div>
-				</div>
+			<div className='footer-logo'>
+</div>
+
 
 
 				<div className='arrow-div'>
 
 					<button> ↑ </button>
 				</div>
+
+
+				<div className='footer-info'>
+
+					<div className='footer-column'>
+						<h5 className='footer-title'>LOCATION</h5>
+						<span className='line'></span>
+						<h5> First Avenue</h5>
+					</div>
+
+					<div className='footer-column'>
+						<h5 className='footer-title'>CALL US</h5>
+						<span className='line'></span>
+						<h5> First Avenue</h5>
+					</div>
+
+					<div className='footer-column'>
+						<h5 className='footer-title'>LOCATION</h5>
+						<span className='line'></span>
+						<h5> First Avenue</h5>
+					</div>
+
+					<div className='footer-column'>
+						<h5 className='footer-title'>LOCATION</h5>
+						<span className='line'></span>
+						<h5> First Avenue</h5>
+					</div>
+
+
+					</div>
+
+
+
 
 
 			</section>

@@ -3,9 +3,15 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: nowrap;
+
+}
+
+.navbar > *{
+	width:33%;
 
 }
 
 .logo > img{
-	width: 200px; height: 200px;
+	width: 160px; height: 160px;
 }

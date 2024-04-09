@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Header from '../Header/HeaderPage'
+import Header from '../Header/Header'
 import Menu from '../MenuPage/Menu'
 import Footer from '../Footer/Footer'
 
@@ -23,7 +23,7 @@ function LandingPage() {
 					<button> ↓ </button>
 				</div>
 
-				<img src="./MASAFEJUJA.svg"/>
+				<img src="./MASAFEJUJA.svg" />
 			</section>
 
 			<Menu />
