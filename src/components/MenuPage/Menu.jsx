@@ -3,22 +3,27 @@ import './Menu.css'
 import NavMenu from './NavMenu'
 import courses from './menuList.js'
 import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
+import { useState } from 'react';
 
 
 function Menu( ) {
 
+	const [totalPrice, setTotalPrice] = useState(0);
 	const shoppingCart = navStore(state => state.shoppingCart)
 
 	function addToBasket(course) {
 
 		navStore.setState((state) => ({
 			...state,
-			shoppingCart: [...state.shoppingCart, course],
+			shoppingCart: [...state.shoppingCart, {...course, price: course.price}],
 			selectedCourses: state.selectedCourses + 1
 		}));
+
+		setTotalPrice(prevPrice => prevPrice + course.price)
 	} 
 
 	function removeFromBasket(index) {
+		const removedItem = shoppingCart[index];
 		
 		navStore.setState((state) => ({
                 ...state,
@@ -29,6 +34,8 @@ function Menu( ) {
                 selectedCourses: state.selectedCourses > 0 ? state.selectedCourses - 1 : 0
 
 		}));
+
+		setTotalPrice(prevPrice => prevPrice - removedItem.price)
 		
 	}
 
@@ -67,7 +74,7 @@ function Menu( ) {
 			</div>
 			</section>
 
-			<ShoppingCart shoppingCart={shoppingCart} removeFromBasket={removeFromBasket}/>
+			<ShoppingCart price={totalPrice} shoppingCart={shoppingCart} removeFromBasket={removeFromBasket}/>
 
 		</>
 	)

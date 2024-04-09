@@ -2,7 +2,7 @@ import React from 'react';
 import './ShoppingCart.css'
 
 
-export default function ShoppingCart({ shoppingCart, removeFromBasket }) {
+export default function ShoppingCart({ shoppingCart, removeFromBasket, price }) {
 
   return (
     <div className='shopping-cart-container'>
@@ -26,7 +26,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket }) {
           </li>
         ))}
       </ul>
-	  <p className='total-amount'>Total amount: ???</p>
+	  <p className='total-amount'>Total amount: {price}</p>
     </div>
   );
 }
