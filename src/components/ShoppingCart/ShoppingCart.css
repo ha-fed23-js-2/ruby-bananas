@@ -35,6 +35,10 @@
 .shopping-cart-remove-btn {
 	border: none;
 	text-align: right;
+	cursor: pointer;
+	display: inline-block;
+	width: fit-content;
+	align-self: end;
 }
 
 .shopping-cart-title {

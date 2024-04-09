@@ -26,9 +26,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket, price }) 
 	  
 
       <ul className='shopping-cart-list'>
-	{/* //TODO: ternary operator (item inte redan finns, rendera item, annars rendera item en gång sedan redera hur många det finns av item) */}
-
-	{shoppingCart.map((item, index) => {
+		{shoppingCart.map((item, index) => {
           // Check if the item's ID is already rendered
           if (!renderedItemIds.includes(item.id)) {
 			renderedItemIds.push(item.id)
@@ -36,22 +34,22 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket, price }) 
               <li className='shopping-cart-item' key={index}>
                 <img className='shopping-cart-img' src={item.image} alt="" />
                 <div className='shopping-cart-text'>
-                  <button
+                  <span
                     className='shopping-cart-remove-btn'
                     onClick={() => removeFromBasket(index)}>
                     <img src='../public/Vector.png' alt="x" />
-                  </button>
+						<p className='shopping-cart-quantity'>Quantity: {itemQuantities[item.id]}</p>
+                  </span>
                   <h2 className='shopping-cart-title'>{item.title}</h2>
                   <p className='shopping-cart-description'>{item.description}</p>
                   <p className='shopping-cart-price'>${item.price}</p>
-				  <p className='shopping-cart-quantity'>{itemQuantities[item.id]}x</p>
                 </div>
               </li>
             );
           } else {
-            // If the item's ID is already rendered, return null
+            // If the item's ID is already rendered, increase itemQuantity
 			itemQuantities[item.id]++;
-            return null;
+            // return null;
           }
         })}
       </ul>
