@@ -26,7 +26,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket, price }) 
           </li>
         ))}
       </ul>
-	  <p className='total-amount'>Total amount: {price}</p>
+	  <p className='total-amount'>Total amount: ${price}</p>
     </div>
   );
 }
