@@ -7,21 +7,27 @@
 }
 
 .shopping-cart-list {
-    border-top: 1px solid white;
-    padding-top: 2em;
+
     display: flex;
+	flex-direction: column;
     gap: 1em;
     margin: 3em 0 0 0;
     justify-content: center;
 	text-align: left;
     width: 100%;
+	padding: 3em;
 
 }
 
 .shopping-cart-item {
+
+	width: 100%;
+	padding: 2em 0;
 	display: flex;
-		gap: 1em;
-		align-items: center;
+	border-top: 1px solid white;
+	gap: 1em;
+	align-items: center;
+
 }
 
 
@@ -29,7 +35,7 @@
 .shopping-cart-text {
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	width: 100%;
 }
 
 
