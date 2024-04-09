@@ -1,37 +1,20 @@
+//здесь я начал чуть чуть работу с тем что добавил courses 
 import { create } from "zustand"
 import courses from '../../MenuPage/menuList'
 
-console.log('courses: ', courses);
-export const editMenuStore = create((set) => ({
-    menu: [courses],
-    //funktion för att lägga till en Menu-Item
-    addMenuItem: (item) =>
-    set((state) => ({
-        menu: [
-            ...state.menu,
-        {
-            id: Date.now(),
-            name: item.name,
-            description: item.description,
-            price: item.price,
-            image: item.image
-        }
-    ]
 
+export const editMenuStore = create((set) => ({
+    menu: courses, 
+
+    addMenuItem: (item) => set((state) => ({
+        menu: [...state.menu, { ...item, id: Date.now() }] 
     })),
 
-    deleteMenuItem: (id)=>
-    set((state) => ({menu: state.menu.filter(item => item.id !== id) })),
+    deleteMenuItem: (id) => set((state) => ({
+        menu: state.menu.filter(item => item.id !== id) 
+    })),
 
-
-    updateMenuItem: (updatedMenuItem) => set((state) => ({
-        menu: state.menu.map(item =>
-            item.id === updatedMenuItem.id ? {
-                ...item,
-                name: updatedMenuItem.name,
-                description: updatedMenuItem.description,
-                price: updatedMenuItem.price,
-                image: updatedMenuItem.image
-            } : item)
+    updateMenuItem: (updatedItem) => set((state) => ({
+        menu: state.menu.map(item => item.id === updatedItem.id ? updatedItem : item) 
     }))
-}))
+}));
