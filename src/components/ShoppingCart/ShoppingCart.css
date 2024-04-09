@@ -22,6 +22,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
+	text-align: left;
+	padding: 1.5em;
+	
 }
 
 
@@ -46,11 +49,12 @@
 }
 
 .shopping-cart-description {
+	margin-top: 1em;
 	
 }
 
 .shopping-cart-price {
-
+	margin-top: 1em;	
 }
 
 .back-arrow {

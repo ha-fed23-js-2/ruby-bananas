@@ -74,7 +74,7 @@ function Menu( ) {
 			</div>
 			</section>
 
-			<ShoppingCart price={totalPrice} shoppingCart={shoppingCart} removeFromBasket={removeFromBasket}/>
+			<ShoppingCart price={totalPrice} shoppingCart={shoppingCart} removeFromBasket={removeFromBasket} addToBasket={addToBasket}/>
 
 		</>
 	)
