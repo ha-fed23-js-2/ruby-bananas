@@ -16,7 +16,7 @@ function Footer() {
 
 				<div className='arrow-div'>
 
-					<button> ↑ </button>
+					<button> <a href="#top"> ↑ </a></button>
 				</div>
 
 

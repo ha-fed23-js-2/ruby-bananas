@@ -9,7 +9,7 @@ function Header () {
 
 	return (
 
-		<header className='header'>
+		<header className='header' id="top">
 
 			<div className='logo'><img src={logo} /></div>
 
