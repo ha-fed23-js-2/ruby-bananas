@@ -4,8 +4,6 @@ import './ShoppingCart.css'
 
 export default function ShoppingCart({ shoppingCart, removeFromBasket }) {
 
-
-
   return (
     <div className='shopping-cart-container'>
       <h1>Shopping Cart</h1>
@@ -18,7 +16,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket }) {
 			<div className='shopping-cart-text'>
 				<button 
 				className='shopping-cart-remove-btn'
-				onClick={() => removeFromBasket(item)}>
+				onClick={() => removeFromBasket(index)}>
 				<img src='../public/Vector.png' alt="x" />
 				</button>
 				<h2 className='shopping-cart-title'>{item.title}</h2>

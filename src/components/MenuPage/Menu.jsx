@@ -3,30 +3,32 @@ import './Menu.css'
 import NavMenu from './NavMenu'
 import courses from './menuList.js'
 import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
-import { useState } from 'react';
 
-//TODO: skapa ny branch och ny component för shopping cart
-//TODO: Skapa en ny lista i shopping cart och lägg till listobjektet man klickar på
 
 function Menu( ) {
 
-	const {selectedCourses, set} = navStore();
-	const [shoppingCart, setShoppingCart] = useState([]); 
+	const shoppingCart = navStore(state => state.shoppingCart)
 
 	function addToBasket(course) {
-		setShoppingCart([...shoppingCart, course]);
-		set ( (state ) => ({ selectedCourses: state.selectedCourses + 1}))
+
+		navStore.setState((state) => ({
+			...state,
+			shoppingCart: [...state.shoppingCart, course],
+			selectedCourses: state.selectedCourses + 1
+		}));
 	} 
 
-	function removeFromBasket(courseToRemove) {
-		const index = shoppingCart.findIndex(item => item === courseToRemove);
-    if (index !== -1) {
-        const updatedCart = [...shoppingCart.slice(0, index), ...shoppingCart.slice(index + 1)];
-        setShoppingCart(updatedCart);
-    }
-	if (selectedCourses > 0) {
-		set ( (state ) => ({ selectedCourses: state.selectedCourses - 1}))
-	}
+	function removeFromBasket(index) {
+		
+		navStore.setState((state) => ({
+                ...state,
+                shoppingCart: [
+					...state.shoppingCart.slice(0, index),
+					...state.shoppingCart.slice(index + 1),
+				],
+                selectedCourses: state.selectedCourses > 0 ? state.selectedCourses - 1 : 0
+
+		}));
 		
 	}
 
