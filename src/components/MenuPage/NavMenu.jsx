@@ -1,5 +1,7 @@
 import { navStore } from './navStore';
 import './NavMenu.css'
+import { Link } from 'react-router-dom'
+
 
 
 function NavMenu() {
@@ -10,7 +12,7 @@ function NavMenu() {
 		const selectedGuests = event.target.value
 		// const updatedCourses = ;
         const updatedRequiredCourses = selectedGuests * 3;
-        inc(); 
+        inc();
         set({ guest: selectedGuests,
 			//  courses: updatedCourses,
 			 requiredCourses: updatedRequiredCourses,
@@ -21,7 +23,7 @@ function NavMenu() {
 
 	return (
 
-		<header className='guest-navbar'>
+		<header id="menu" className='guest-navbar'>
 
 			<div>
 			<label> Guests: </label>
@@ -35,11 +37,12 @@ function NavMenu() {
 
 			<p className='dishes-count'> Selected dishes: {selectedCourses}</p>
 			<p className='dishes-count'>Minimum dishes: {requiredCourses} </p>
-			<button className='proceed-btn CTA' 
-			disabled={selectedCourses < requiredCourses} 
+			<button className='proceed-btn CTA'
+			disabled={selectedCourses < requiredCourses}
 			>Proceed to 🛒{selectedCourses}
+
 			</button>
-		
+
 
 		</header>
 

@@ -13,18 +13,7 @@ function App() {
 
 	return (
 		<>
-			<nav>
-				<ul>
-					<li>
-						<Link to="/">Hem</Link>
-						<Link to="#meny">Meny</Link>
-						<Link to="/redigera">Redigera</Link>
-						<Link to="/login">Login</Link>
-						<Link to="/form">Form</Link>
-						<Link to="#footer">Contact</Link>
-					</li>
-				</ul>
-			</nav>
+		
 			<Routes>
 				<Route path="/" element={<LandingPage />} />
 				<Route path="#menu" element="#menu" />
