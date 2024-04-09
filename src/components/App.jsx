@@ -9,8 +9,6 @@ import Footer from './Footer/Footer'
 
 import { Link, Route, Routes } from 'react-router-dom'
 
-import { Link, Route, Routes } from 'react-router-dom'
-
 function App() {
 
 	return (
