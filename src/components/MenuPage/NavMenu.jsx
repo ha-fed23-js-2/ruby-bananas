@@ -6,15 +6,7 @@ import { Link } from 'react-router-dom'
 
 function NavMenu() {
 
-	const {shoppingCart, requiredDishes, set} = navStore();
-
-	function handleGuestChange(event) {
-		const selectedGuests = event.target.value
-	
-        set({ guests: selectedGuests,
-			 requiredDishes: selectedGuests * 3,
-			});
-	}
+	const {shoppingCart, requiredDishes, set, handleGuestChange} = navStore();
 
 
 
