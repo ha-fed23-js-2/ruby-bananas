@@ -62,6 +62,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket, addToBask
         })}
       </ul>
 	  <p className='total-amount'>Total amount: ${price}</p>
+	  <button>Proceed</button>
     </div>
   );
 }
