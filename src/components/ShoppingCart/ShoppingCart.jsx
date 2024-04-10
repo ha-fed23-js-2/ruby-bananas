@@ -1,19 +1,42 @@
 import React from 'react';
 import './ShoppingCart.css'
+import { navStore } from '../MenuPage/navStore';
 
 
-export default function ShoppingCart({ shoppingCart, removeFromBasket, addToBasket, price }) {
+export default function ShoppingCart({ shoppingCart, price, setTotalPrice }) {
+
 
 	const itemQuantities = {};
 
   // Calculate item quantities
- 	shoppingCart.forEach(item => {
-    if (item.id in itemQuantities) {
-      itemQuantities[item.id]++;
-    } else {
-      itemQuantities[item.id] = 1;
-    }
-  });
+	function handleAdd() {
+		
+	}
+
+	function removeFromBasket(index) {
+		const removedItem = shoppingCart[index];
+		
+		navStore.setState((state) => ({
+				...state,
+				shoppingCart: [
+					...state.shoppingCart.slice(0, index),
+					...state.shoppingCart.slice(index + 1),
+				],
+				selectedCourses: state.selectedCourses > 0 ? state.selectedCourses - 1 : 0
+
+		}));
+
+		setTotalPrice(prevPrice => prevPrice - removedItem.price)
+		
+	}
+
+	shoppingCart.forEach(item => {
+	if (item.id in itemQuantities) {
+	itemQuantities[item.id]++;
+	} else {
+	itemQuantities[item.id] = 1;
+	}
+	});
 
 
   const renderedItemIds = [];
@@ -44,7 +67,7 @@ export default function ShoppingCart({ shoppingCart, removeFromBasket, addToBask
 						<span className='shopping-cart-quantity'>
 							 <button onClick={() => removeFromBasket(index)}>-</button> 
 							 {itemQuantities[item.id]} 
-							 <button>+</button>
+							 <button onClick={handleAdd}>+</button>
 							 {/*TODO: onClick för plus-button */}
 						</span>
 						<h2 className='shopping-cart-title'>{item.title}</h2>
