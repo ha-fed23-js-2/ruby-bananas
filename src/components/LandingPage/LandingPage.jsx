@@ -20,7 +20,7 @@ function LandingPage() {
 				</div>
 
 				<div className='arrow-div'>
-					<button><a href="#menu"> ↓ </a></button>
+					<a href="#menu"><button> ↓ </button></a>
 				</div>
 
 			</section>
