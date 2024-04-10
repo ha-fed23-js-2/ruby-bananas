@@ -17,7 +17,7 @@ function App() {
 				<ul>
 					<li>
 						<Link to="/">Hem</Link>
-						<Link to="#meny">Meny</Link>
+						<Link to="/meny">Meny</Link>
 						<Link to="/redigera">Redigera</Link>
 						<Link to="/login">Login</Link>
 						<Link to="/form">Form</Link>
