@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
+import { Link } from 'react-router-dom'
 
 const Letter = ({ letter, onLetterClick, isWrong }) => {
 	const [isClicked, setIsClicked] = useState(false);
@@ -46,6 +47,21 @@ const LoginPage = () => {
 	};
 
 	return (
+
+
+		<section className='login-container'>
+
+
+				<header>
+					<div>
+						<Link to="/"><button>Back</button></Link>
+					</div>
+					<div className='logo'>
+						<img src="./logo.png" />
+					</div>
+
+				</header>
+
 		<div className={`logo ${correctPassword ? 'correct' : ''}`}>
 			{words.map((word, wordIndex) => (
 				<div key={wordIndex}>
@@ -53,9 +69,15 @@ const LoginPage = () => {
 						<Letter key={index} letter={letter} onLetterClick={handleLetterClick} isWrong={isWrong} />
 					))}
 				</div>
+
+
 			))}
 		</div>
+		</section>
+
+
 	);
+
 };
 
 export default LoginPage;
