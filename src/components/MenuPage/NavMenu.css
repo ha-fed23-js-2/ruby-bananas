@@ -1,5 +1,4 @@
 .guest-navbar{
-	background: black;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -7,7 +6,7 @@
 	padding: 1em 2em ;
 	position: sticky;
 	z-index: 1000;
-	top: 0;
+	    top: 0;        
 
 }
 

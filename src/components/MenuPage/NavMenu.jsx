@@ -6,18 +6,7 @@ import { Link } from 'react-router-dom'
 
 function NavMenu() {
 
-	const {selectedCourses, requiredCourses, inc, set} = navStore();
-
-	function handleGuestChange(event) {
-		const selectedGuests = event.target.value
-		// const updatedCourses = ;
-        const updatedRequiredCourses = selectedGuests * 3;
-        inc();
-        set({ guest: selectedGuests,
-			//  courses: updatedCourses,
-			 requiredCourses: updatedRequiredCourses,
-			});
-	}
+	const {shoppingCart, requiredDishes, set, handleGuestChange} = navStore();
 
 
 
@@ -35,12 +24,11 @@ function NavMenu() {
 			</select>
 			</div>
 
-			<p className='dishes-count'> Selected dishes: {selectedCourses}</p>
-			<p className='dishes-count'>Minimum dishes: {requiredCourses} </p>
-			<button className='proceed-btn CTA'
-			disabled={selectedCourses < requiredCourses}
-			>Proceed to 🛒{selectedCourses}
-
+			<p className='dishes-count'> Selected dishes: {shoppingCart.length}</p>
+			<p className='dishes-count'>Minimum dishes: {requiredDishes} </p>
+			<button className='proceed-btn CTA' 
+			disabled={shoppingCart.length < requiredDishes} 
+			>Proceed to 🛒{shoppingCart.length}
 			</button>
 
 
