@@ -12,10 +12,6 @@ function Menu() {
 	// const shoppingCart = navStore(state => state.shoppingCart)
 	const { shoppingCart, addToBasket } = navStore();
 
-	const handleAddToBasket = (course) => {
-		addToBasket(course, setTotalPrice); 
-	  };
-
 	return (
 
 		<>
@@ -38,7 +34,7 @@ function Menu() {
 							
 							<div className='button-row'>
 							<h4>${course.price}</h4>
-							<button onClick={() => handleAddToBasket(course)}>Add</button>
+							<button onClick={() => addToBasket(course, setTotalPrice)}>Add</button>
 							{/* <button onClick={removeFromBasket}>Remove</button> */}
 							</div>
 							</div>
