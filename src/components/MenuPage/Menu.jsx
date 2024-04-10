@@ -6,40 +6,11 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
 import { useState } from 'react';
 
 
-function Menu( ) {
+function Menu() {
 	const courses = editMenuStore(state => state.menu)
 	const [totalPrice, setTotalPrice] = useState(0);
-	const shoppingCart = navStore(state => state.shoppingCart)
-
-	function addToBasket(course) {
-
-		navStore.setState((state) => ({
-			...state,
-			shoppingCart: [...state.shoppingCart, {...course, price: course.price}],
-			selectedCourses: state.selectedCourses + 1
-		}));
-
-		setTotalPrice(prevPrice => prevPrice + course.price)
-	} 
-
-	function removeFromBasket(index) {
-		const removedItem = shoppingCart[index];
-		
-		navStore.setState((state) => ({
-                ...state,
-                shoppingCart: [
-					...state.shoppingCart.slice(0, index),
-					...state.shoppingCart.slice(index + 1),
-				],
-                selectedCourses: state.selectedCourses > 0 ? state.selectedCourses - 1 : 0
-
-		}));
-
-		setTotalPrice(prevPrice => prevPrice - removedItem.price)
-		
-	}
-
-
+	// const shoppingCart = navStore(state => state.shoppingCart)
+	const { shoppingCart, addToBasket } = navStore();
 
 	return (
 
@@ -63,7 +34,7 @@ function Menu( ) {
 							
 							<div className='button-row'>
 							<h4>${course.price}</h4>
-							<button onClick={() => addToBasket(course)}>Add</button>
+							<button onClick={() => addToBasket(course, setTotalPrice)}>Add</button>
 							{/* <button onClick={removeFromBasket}>Remove</button> */}
 							</div>
 							</div>
@@ -74,7 +45,7 @@ function Menu( ) {
 			</div>
 			</section>
 
-			<ShoppingCart price={totalPrice} shoppingCart={shoppingCart} removeFromBasket={removeFromBasket} addToBasket={addToBasket}/>
+			<ShoppingCart price={totalPrice} shoppingCart={shoppingCart} addToBasket={addToBasket} setTotalPrice={setTotalPrice}/>
 
 		</>
 	)
