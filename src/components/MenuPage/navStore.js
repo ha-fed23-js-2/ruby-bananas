@@ -8,13 +8,14 @@ export const navStore = create((set) => ({
 	shoppingCart: [],
 	addToBasket: (course, setTotalPrice) => {
 		set((state) => ({
-		  ...state,
-		  shoppingCart: [...state.shoppingCart, { ...course, price: course.price }],
-		  selectedCourses: state.selectedCourses + 1,
+			shoppingCart: [...state.shoppingCart, { ...course, amount: 1 }],
+			selectedCourses: state.selectedCourses + 1,
 		}));
 		// Här hanterar du uppdateringen av totalpriset lokalt
 		setTotalPrice((prevPrice) => prevPrice + course.price);
 	  },
+
+	//   TODO: handleIncrease function
 	handleGuestChange(event) {
 		const selectedGuests = event.target.value
 	

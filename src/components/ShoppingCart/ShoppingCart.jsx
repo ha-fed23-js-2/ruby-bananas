@@ -3,15 +3,11 @@ import './ShoppingCart.css'
 import { navStore } from '../MenuPage/navStore';
 
 
-export default function ShoppingCart({ shoppingCart, price, setTotalPrice }) {
+export default function ShoppingCart({ shoppingCart, price, setTotalPrice,}) {
 
 
 	const itemQuantities = {};
 
-  // Calculate item quantities
-	function handleAdd() {
-		
-	}
 
 	function removeFromBasket(index) {
 		const removedItem = shoppingCart[index];
@@ -29,6 +25,7 @@ export default function ShoppingCart({ shoppingCart, price, setTotalPrice }) {
 		setTotalPrice(prevPrice => prevPrice - removedItem.price)
 		
 	}
+
 
 	shoppingCart.forEach(item => {
 	if (item.id in itemQuantities) {
@@ -64,11 +61,8 @@ export default function ShoppingCart({ shoppingCart, price, setTotalPrice }) {
 								{/* TODO: Ändra så att alla items tas bort */}
 							<img src='../public/Vector.png' alt="x" />
 						</span>
-						<span className='shopping-cart-quantity'>
-							 <button onClick={() => removeFromBasket(index)}>-</button> 
-							 {itemQuantities[item.id]} 
-							 <button onClick={handleAdd}>+</button>
-							 {/*TODO: onClick för plus-button */}
+						<span className='shopping-cart-quantity'> 
+							Quantity: { itemQuantities[item.id] } 
 						</span>
 						<h2 className='shopping-cart-title'>{item.title}</h2>
 						<p className='shopping-cart-description'>{item.description}</p>
