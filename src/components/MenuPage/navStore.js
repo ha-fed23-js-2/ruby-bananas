@@ -24,6 +24,27 @@ export const navStore = create((set) => ({
            totalSelectedCourses: newTotal,
        };
    }),
+
+   plusOneInBasket: (id) => set((state) => {
+    const index = state.shoppingCart.findIndex(item => item.id === id);
+    if (index === -1) {
+        // Om kursen inte finns i varukorgen, returnera aktuellt tillstånd
+        return state;
+    }
+
+    const newCart = [...state.shoppingCart];
+    const updatedItem = { ...newCart[index], quantity: newCart[index].quantity + 1 };
+
+    newCart[index] = updatedItem;
+
+    const newTotal = state.totalSelectedCourses + 1; // Öka den totala valda kursmängden med 1
+
+    return {
+        shoppingCart: newCart,
+        totalSelectedCourses: newTotal,
+    };
+}),
+
    removeFromBasket: (id) => set((state) => {
        const newCart = state.shoppingCart.filter(item => item.id !== id);
        const newTotal = newCart.reduce((acc, item) => acc + item.quantity, 0);
@@ -33,7 +54,7 @@ export const navStore = create((set) => ({
            totalSelectedCourses: newTotal,
        };
    }),
-   
+
    removeOneFromBasket: (id) => set((state) => {
     const index = state.shoppingCart.findIndex(item => item.id === id);
     if (index === -1) {
