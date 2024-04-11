@@ -22,7 +22,6 @@ function Header () {
 						<NavLink to="/edit">Edit</NavLink>
 						<NavLink to="/login">Login</NavLink>
 						<NavLink to="/form">Form</NavLink>
-						<a href="menu"> menu</a>
 					</li>
 				</ul>
 		</nav>
