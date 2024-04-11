@@ -11,18 +11,12 @@
   max-width: 500px;
   margin: auto;
   padding: 20px;
-  color: #000;
-  font-family: 'Arial', sans-serif;
-<<<<<<< HEAD
- }
-
-=======
+  color: white;
 }
->>>>>>> new-dev
 .reservation-form h1 {
   font-size: 4em;
   margin-bottom: 20px;
-  font-family: italiana;
+  font-family: 'italiana';
 }
 
 .input-group {
