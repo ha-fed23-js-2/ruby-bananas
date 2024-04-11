@@ -10,7 +10,7 @@ function Menu() {
 	const courses = editMenuStore(state => state.menu)
 	const [totalPrice, setTotalPrice] = useState(0);
 	// const shoppingCart = navStore(state => state.shoppingCart)
-	const { shoppingCart, addToBasket } = navStore();
+	const { addToBasket } = navStore();
 
 	return (
 
@@ -45,7 +45,7 @@ function Menu() {
 			</div>
 			</section>
 
-			<ShoppingCart price={totalPrice} shoppingCart={shoppingCart} addToBasket={addToBasket} setTotalPrice={setTotalPrice}/>
+			<ShoppingCart totalPrice={totalPrice} addToBasket={addToBasket} setTotalPrice={setTotalPrice}/>
 
 		</>
 	)

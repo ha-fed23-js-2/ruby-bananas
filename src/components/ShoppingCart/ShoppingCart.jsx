@@ -3,7 +3,9 @@ import './ShoppingCart.css'
 import { navStore } from '../MenuPage/navStore';
 
 
-export default function ShoppingCart({ shoppingCart, price, setTotalPrice,}) {
+export default function ShoppingCart({ totalPrice, setTotalPrice,}) {
+
+	const { shoppingCart } = navStore();
 
 
 	// const itemQuantities = {};
@@ -74,7 +76,7 @@ export default function ShoppingCart({ shoppingCart, price, setTotalPrice,}) {
           }
         })}
       </ul>
-	  <p className='total-amount'>Total amount: ${price}</p>
+	  <p className='total-amount'>Total amount: ${totalPrice}</p>
 	  <button>Proceed</button>
     </div>
   );
