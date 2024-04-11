@@ -6,7 +6,11 @@ import { navStore } from '../MenuPage/navStore';
 export default function ShoppingCart({ shoppingCart, price, setTotalPrice,}) {
 
 
-	const itemQuantities = {};
+	// const itemQuantities = {};
+	const itemQuantities = shoppingCart.reduce((quantities, item) => {
+		quantities[item.id] = (quantities[item.id] || 0) + 1;
+		return quantities;
+	  }, {});
 
 
 	function removeFromBasket(index) {
@@ -26,14 +30,6 @@ export default function ShoppingCart({ shoppingCart, price, setTotalPrice,}) {
 		
 	}
 
-
-	shoppingCart.forEach(item => {
-	if (item.id in itemQuantities) {
-	itemQuantities[item.id]++;
-	} else {
-	itemQuantities[item.id] = 1;
-	}
-	});
 
 
   const renderedItemIds = [];
