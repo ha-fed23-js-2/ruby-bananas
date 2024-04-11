@@ -29,8 +29,9 @@
 }
 
 
-.arrow-div > button {
+.arrow-div > a {
 	font-size: 4vh;
-	position: relative;
-	left: 0;
+}
+.arrow-div > button {
+	font-size: 8vh;
 }
