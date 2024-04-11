@@ -11,6 +11,8 @@ function Header () {
 
 		<header className='header' id="top">
 
+		<div></div>
+
 			<div className='logo'><img src={logo} /></div>
 
 			<nav>

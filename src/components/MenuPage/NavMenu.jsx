@@ -1,6 +1,5 @@
 import { navStore } from './navStore';
 import './NavMenu.css'
-import { Link } from 'react-router-dom'
 
 
 

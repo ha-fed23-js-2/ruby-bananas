@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-// import courses from './menuList'
 
 
 export const navStore = create((set) => ({
