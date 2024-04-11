@@ -1,5 +1,7 @@
 import { navStore } from './navStore';
 import './NavMenu.css';
+import { Link, Route, Routes } from 'react-router-dom'
+
 
 function NavMenu() {
    const { shoppingCart, requiredDishes, handleGuestChange } = navStore();
@@ -19,9 +21,9 @@ function NavMenu() {
 
            <p className='dishes-count'> Selected dishes: {totalSelectedCourses}</p>
            <p className='dishes-count'>Minimum dishes: {requiredDishes} </p>
-           <button className='proceed-btn CTA' disabled={totalSelectedCourses < requiredDishes}>
+           <Link to="/shoppingCart"> <button className='proceed-btn CTA' disabled={totalSelectedCourses < requiredDishes}>
                Proceed to 🛒{totalSelectedCourses}
-           </button>
+           </button> </Link>
        </header>
    );
 }

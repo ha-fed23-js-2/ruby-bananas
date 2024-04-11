@@ -1,6 +1,7 @@
 import React from 'react';
 import './ShoppingCart.css';
 import { navStore } from '../MenuPage/navStore';
+import { Link } from 'react-router-dom'
 
 export default function ShoppingCart() {
    const { shoppingCart, removeFromBasket, totalAmount } = navStore((state) => ({
@@ -10,7 +11,20 @@ export default function ShoppingCart() {
    }));
 
    return (
+	
 	<div className='shopping-cart-container'>
+	
+
+<header>
+	<div>
+		<Link to="/"><button>Back</button></Link>
+	</div>
+	<div className='logo'>
+		<img src="./logo.png" />
+	</div>
+
+</header>
+
 	<h1>Shopping Cart Temporary Title</h1>
 	<ul className='shopping-cart-list'>
 	  {shoppingCart.map((item) => (
