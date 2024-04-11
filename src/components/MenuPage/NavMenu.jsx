@@ -1,6 +1,6 @@
 import { navStore } from './navStore';
 import './NavMenu.css';
-import { Link, Route, Routes } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 function NavMenu() {
@@ -21,9 +21,9 @@ function NavMenu() {
 
            <p className='dishes-count'> Selected dishes: {totalSelectedCourses}</p>
            <p className='dishes-count'>Minimum dishes: {requiredDishes} </p>
-           <Link to="/shoppingCart"> <button className='proceed-btn CTA' disabled={totalSelectedCourses < requiredDishes}>
+           <NavLink to="/cart"> <button className='proceed-btn CTA' disabled={totalSelectedCourses < requiredDishes}>
                Proceed to 🛒{totalSelectedCourses}
-           </button> </Link>
+           </button> </NavLink>
        </header>
    );
 }
