@@ -45,8 +45,7 @@ function Menu() {
 			</div>
 			</section>
 
-			<ShoppingCart price={totalPrice} shoppingCart={shoppingCart} addToBasket={addToBasket} setTotalPrice={setTotalPrice}/>
-
+			
 		</>
 	)
 }

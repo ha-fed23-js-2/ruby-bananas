@@ -1,35 +1,43 @@
-import { create } from 'zustand'
-
+import { create } from 'zustand';
 
 export const navStore = create((set) => ({
-	guests: 1,
-	requiredDishes: 3,
-	shoppingCart: [],
-	addToBasket: (course, setTotalPrice) => {
-		set((state) => ({
-			shoppingCart: [...state.shoppingCart, { ...course, amount: 1 }],
-			selectedCourses: state.selectedCourses + 1,
-		}));
-		// Här hanterar du uppdateringen av totalpriset lokalt
-		setTotalPrice((prevPrice) => prevPrice + course.price);
-	  },
+   guests: 1,
+   requiredDishes: 3,
+   shoppingCart: [],
+   totalSelectedCourses: 0, // Не используется напрямую, но оставлено для примера
+   addToBasket: (course) => set((state) => {
+       const index = state.shoppingCart.findIndex(item => item.id === course.id);
+       let newCart = [...state.shoppingCart];
+       let newTotal = state.totalSelectedCourses;
 
-	//   TODO: handleIncrease function
-	handleGuestChange(event) {
-		const selectedGuests = event.target.value
-	
-        set({ guests: selectedGuests,
-			 requiredDishes: selectedGuests * 3,
-			});
-	},
-	set,
+       if (index === -1) {
+           newCart.push({ ...course, quantity: 1 });
+           newTotal += 1;
+       } else {
+           const updatedItem = { ...newCart[index], quantity: newCart[index].quantity + 1 };
+           newCart[index] = updatedItem;
+           newTotal += 1;
+       }
 
+       return {
+           shoppingCart: newCart,
+           totalSelectedCourses: newTotal,
+       };
+   }),
+   removeFromBasket: (id) => set((state) => {
+       const newCart = state.shoppingCart.filter(item => item.id !== id);
+       const newTotal = newCart.reduce((acc, item) => acc + item.quantity, 0);
 
-}))
-
-
-// TODO
-// Gå ingenom store-filen, vad skall vi ha i den? 
-// Slå samman navStore & editMenuStore till en????
-// Lägg in menyn i navStore
-// Byt namn på store?
+       return {
+           shoppingCart: newCart,
+           totalSelectedCourses: newTotal,
+       };
+   }),
+   handleGuestChange: (event) => {
+       const selectedGuests = parseInt(event.target.value, 10);
+       set({
+           guests: selectedGuests,
+           requiredDishes: selectedGuests * 3,
+       });
+   },
+}));
