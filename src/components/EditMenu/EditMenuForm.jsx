@@ -5,16 +5,17 @@ import {editMenuStore} from './data/editMenuStore'
 function EditMenuForm() {
 
     const {addMenuItem} = editMenuStore((state) => ({ addMenuItem: state.addMenuItem}))
-
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
     const [image, setImage] = useState('')
+    const [contains, setContains] = useState('')
 
     function handleAdd() {
         const newItem = {
             name: name,
             description: description,
+            contains: contains,
             price: price,
             image: image  
         }
@@ -35,6 +36,7 @@ function EditMenuForm() {
             <div className="form-column">
                 <input type="text" placeholder="Title" onChange={(e) => setName(e.target.value)} />
                 <input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
+                <input type="text" placeholder='Contains' onChange={(e) => setContains(e.target.value)} />
             </div>
             <div className="form-column2">
                 <input type="text" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/>

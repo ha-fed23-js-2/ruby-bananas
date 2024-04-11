@@ -1,53 +1,31 @@
 import { navStore } from './navStore';
-import './NavMenu.css'
-import { Link } from 'react-router-dom'
-
+import './NavMenu.css';
+import { NavLink } from 'react-router-dom'
 
 
 function NavMenu() {
+   const { shoppingCart, requiredDishes, handleGuestChange } = navStore();
+   const totalSelectedCourses = shoppingCart.reduce((acc, item) => acc + item.quantity, 0); // Динамически вычисляем общее количество выбранных блюд
 
-	const {selectedCourses, requiredCourses, inc, set} = navStore();
+   return (
+       <header id="menu" className='guest-navbar'>
+           <div>
+               <label> Guests: </label>
+               <select onChange={handleGuestChange}>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3</option>
+                   <option value="4">4</option>
+               </select>
+           </div>
 
-	function handleGuestChange(event) {
-		const selectedGuests = event.target.value
-		// const updatedCourses = ;
-        const updatedRequiredCourses = selectedGuests * 3;
-        inc();
-        set({ guest: selectedGuests,
-			//  courses: updatedCourses,
-			 requiredCourses: updatedRequiredCourses,
-			});
-	}
-
-
-
-	return (
-
-		<header id="menu" className='guest-navbar'>
-
-			<div>
-			<label> Guests: </label>
-			<select onChange={handleGuestChange}>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			</select>
-			</div>
-
-			<p className='dishes-count'> Selected dishes: {selectedCourses}</p>
-			<p className='dishes-count'>Minimum dishes: {requiredCourses} </p>
-			<button className='proceed-btn CTA'
-			disabled={selectedCourses < requiredCourses}
-			>Proceed to 🛒{selectedCourses}
-
-			</button>
-
-
-		</header>
-
-	)
+           <p className='dishes-count'> Selected dishes: {totalSelectedCourses}</p>
+           <p className='dishes-count'>Minimum dishes: {requiredDishes} </p>
+           <NavLink to="/cart"> <button className='proceed-btn CTA' disabled={totalSelectedCourses < requiredDishes}>
+               Proceed to 🛒{totalSelectedCourses}
+           </button> </NavLink>
+       </header>
+   );
 }
 
-
-export default NavMenu
+export default NavMenu;
