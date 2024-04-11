@@ -5,6 +5,7 @@ import MenuPage from './MenuPage/Menu'
 import EditMenu from './EditMenu/EditMenu'
 import LoginPage from './Login/Login'
 import Form from './Form/Form'
+import ShoppingCart from './ShoppingCart/ShoppingCart'
 import Footer from './Footer/Footer'
 
 import { Link, Route, Routes } from 'react-router-dom'
@@ -17,6 +18,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<LandingPage />} />
 				<Route path="#menu" element="#menu" />
+				<Route path='/shoppingCart' element={<ShoppingCart/>}/>
 				<Route path="/redigera" element={<EditMenu />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/form" element={<Form />} />

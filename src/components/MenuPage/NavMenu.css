@@ -20,7 +20,7 @@
 }
 
 
-.navbar {
+.guest-navbar > *{
 	width: 100%;
 	color: white;
 	display: flex;
@@ -30,3 +30,4 @@
 .navbar > *{
 	width: 33%;
 }
+

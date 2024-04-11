@@ -16,6 +16,7 @@
 	text-align: left;
     width: 100%;
 	padding: 3em;
+	color: white;
 
 }
 
@@ -58,9 +59,7 @@
 	align-self: end;
 }
 
-.shopping-cart-title {
 
-}
 
 .shopping-cart-description {
 	margin-top: 1em;
@@ -118,17 +117,6 @@
 	background-color: #00000000;
 }
 
-.shopping-cart-title {
-
-}
-
-.shopping-cart-description {
-
-}
-
-.shopping-cart-price {
-
-}
 
 .back-arrow {
 	font-size: 2em;

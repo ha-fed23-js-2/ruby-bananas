@@ -1,40 +1,31 @@
 import { navStore } from './navStore';
-import './NavMenu.css'
-
+import './NavMenu.css';
+import { Link, Route, Routes } from 'react-router-dom'
 
 
 function NavMenu() {
+   const { shoppingCart, requiredDishes, handleGuestChange } = navStore();
+   const totalSelectedCourses = shoppingCart.reduce((acc, item) => acc + item.quantity, 0); // Динамически вычисляем общее количество выбранных блюд
 
-	const {shoppingCart, requiredDishes, set, handleGuestChange} = navStore();
+   return (
+       <header id="menu" className='guest-navbar'>
+           <div>
+               <label> Guests: </label>
+               <select onChange={handleGuestChange}>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3</option>
+                   <option value="4">4</option>
+               </select>
+           </div>
 
-
-
-	return (
-
-		<header id="menu" className='guest-navbar'>
-
-			<div>
-			<label> Guests: </label>
-			<select onChange={handleGuestChange}>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			</select>
-			</div>
-
-			<p className='dishes-count'> Selected dishes: {shoppingCart.length}</p>
-			<p className='dishes-count'>Minimum dishes: {requiredDishes} </p>
-			<button className='proceed-btn CTA' 
-			disabled={shoppingCart.length < requiredDishes} 
-			>Proceed to 🛒{shoppingCart.length}
-			</button>
-
-
-		</header>
-
-	)
+           <p className='dishes-count'> Selected dishes: {totalSelectedCourses}</p>
+           <p className='dishes-count'>Minimum dishes: {requiredDishes} </p>
+           <Link to="/shoppingCart"> <button className='proceed-btn CTA' disabled={totalSelectedCourses < requiredDishes}>
+               Proceed to 🛒{totalSelectedCourses}
+           </button> </Link>
+       </header>
+   );
 }
 
-
-export default NavMenu
+export default NavMenu;
