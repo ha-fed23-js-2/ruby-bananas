@@ -1,4 +1,4 @@
-
+//здесь я начал чуть чуть работу с тем что добавил courses 
 import { create } from "zustand"
 import courses from '../../MenuPage/menuList'
 
