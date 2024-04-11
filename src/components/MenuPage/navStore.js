@@ -33,6 +33,30 @@ export const navStore = create((set) => ({
            totalSelectedCourses: newTotal,
        };
    }),
+   
+   removeOneFromBasket: (id) => set((state) => {
+    const index = state.shoppingCart.findIndex(item => item.id === id);
+    if (index === -1) {
+        return state;
+    }
+
+    const newCart = [...state.shoppingCart];
+    const updatedItem = { ...newCart[index], quantity: newCart[index].quantity - 1 };
+
+    if (updatedItem.quantity <= 0) {
+        newCart.splice(index, 1);
+    } else {
+        newCart[index] = updatedItem;
+    }
+
+    const newTotal = state.totalSelectedCourses - 1; 
+
+    return {
+        shoppingCart: newCart,
+        totalSelectedCourses: newTotal,
+    };
+}),
+
    handleGuestChange: (event) => {
        const selectedGuests = parseInt(event.target.value, 10);
        set({

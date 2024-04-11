@@ -4,9 +4,10 @@ import { navStore } from '../MenuPage/navStore';
 import { Link } from 'react-router-dom'
 
 export default function ShoppingCart() {
-   const { shoppingCart, removeFromBasket, totalAmount } = navStore((state) => ({
+   const { shoppingCart, removeFromBasket, removeOneFromBasket ,totalAmount } = navStore((state) => ({
        shoppingCart: state.shoppingCart,
        removeFromBasket: state.removeFromBasket,
+	   removeOneFromBasket: state.removeOneFromBasket,
        totalAmount: state.shoppingCart.reduce((acc, item) => acc + (item.price * item.quantity), 0),
    }));
 
@@ -34,7 +35,7 @@ export default function ShoppingCart() {
 			<span className='shopping-cart-remove-btn' onClick={() => removeFromBasket(item.id)}>
 			  <img src='../public/Vector.png' alt="remove" />
 			</span>
-			<span className='shopping-cart-quantity'>Quantity: {item.quantity}</span>
+			<span className='shopping-cart-quantity'><button onClick={() => removeOneFromBasket(item.id)}>-</button> {item.quantity} <button>+</button></span>
 			<h2 className='shopping-cart-title'>{item.name}</h2>
 			<p className='shopping-cart-description'>{item.description}</p>
 			<p className='shopping-cart-contains'>{item.contains}</p>
