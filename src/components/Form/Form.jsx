@@ -12,6 +12,7 @@ function ReservationForm() {
 	const [emailTouched, setEmailTouched] = useState(false)
 	const [number, setNumber] = useState('')
 	const [numberTouched, setNumberTouched] = useState(false)
+	const [allergies, setAllergies] = useState('')
 	
 	
 	// Validate values
@@ -60,7 +61,15 @@ function ReservationForm() {
 			email,
 			number
 		}
-		console.log('Data from form: ', formData)
+		// console.log('Data from form: ', formData)
+		 // Reset form fields
+		 setName('');
+		 setNameTouched(false);
+		 setEmail('');
+		 setEmailTouched(false);
+		 setNumber('');
+		 setNumberTouched(false);
+		 setAllergies('');
 	};
 
 	return (
@@ -112,7 +121,12 @@ function ReservationForm() {
 							/>
 							<p className={numberErrorClass}> {numberErrorMessage} &nbsp; </p>
 						</div>
-					<textarea name="allergies" placeholder="Any allergies or other preferences" />
+					<textarea 
+						onChange={(event) => setAllergies(event.target.value)} 
+						value={allergies} 
+						name="allergies" 
+						placeholder="Any allergies or other preferences" 
+					/>
 				</div>
 				<div className="booking-conditions">
 					<p>Booking conditions</p>
