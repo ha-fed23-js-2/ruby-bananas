@@ -1,12 +1,5 @@
 /* FormStyles.css */
 
-.formSection{
-	background-color: black;
-	width: 100%;
-	height: 90vh;
-	display: flex;
-}
-
 .reservation-form {
   max-width: 500px;
   margin: auto;
@@ -19,10 +12,14 @@
   font-size: 4em;
   margin-bottom: 20px;
   font-family: italiana;
+  color: #fff;
 }
 
 .input-group {
   margin-bottom: 15px;
+}
+.input-group p{
+  margin: 2px 0 10px 0;
 }
 
 .input-group input,
@@ -30,7 +27,6 @@
 .reservation-form textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
   background-color: #000;
   border: 1px solid #ddd;
   color: #fff;
@@ -44,6 +40,7 @@
 .booking-conditions {
   margin-bottom: 15px;
   font-size: 0.9em;
+  color: #fff;
 }
 
 .reservation-form button {
@@ -63,5 +60,20 @@
 
 .split-form{
 	display: flex;
-	gap: 1em;
+	flex-direction: column;
+}
+
+.error{
+	color: hsl(0, 100%, 45%);
+}
+.hidden {
+	visibility: hidden;
+}
+
+input.invalid {
+	border: 1px solid hsl(0, 100%, 45%)
+}
+
+:disabled {
+	opacity: 0.5;
 }
