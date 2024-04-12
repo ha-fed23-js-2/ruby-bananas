@@ -14,7 +14,7 @@ function EditMenuForm() {
 
 
 	async function handleAdd() {
-        
+
         const newItem = {
             name: name,
             description: description,
@@ -41,7 +41,7 @@ function EditMenuForm() {
             <div className="form-column">
                 <input type="text" placeholder="Title" onChange={(e) => setName(e.target.value)} />
                 <input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
-                <input type="text" placeholder='Contains' onChange={(e) => setContains(e.target.value)} />
+                <input type="text" placeholder='Contains' onChange={(e) => setContains('Contains: ' + e.target.value)} />
             </div>
             <div className="form-column2">
                 <input type="text" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/>
