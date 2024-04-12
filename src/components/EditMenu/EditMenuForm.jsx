@@ -11,16 +11,10 @@ function EditMenuForm() {
     const [price, setPrice] = useState('')
     const [image, setImage] = useState('')
     const [contains, setContains] = useState('')
-	const [newItem, setNewItem] = useState(null)
+
 
 	async function handleAdd() {
-        await saveToApi({
-            name: name,
-            description: description,
-            contains: contains,
-            price: price,
-            image: image
-        });
+        
         const newItem = {
             name: name,
             description: description,
@@ -28,16 +22,11 @@ function EditMenuForm() {
             price: price,
             image: image
         };
-        addMenuItem(newItem);
+        await addMenuItem(newItem);
         console.log(newItem);
     }
 
-	const handleLoad = async () => {
-		const result = await loadFromApi()
-		console.log('App.handleLoad result: ', result);
-		setNewItem(result)
-		// addMenuItem(newItem)
-	}
+
 
     function handleImageChange(e) {
         const file = e.target.files[0]
@@ -57,7 +46,6 @@ function EditMenuForm() {
             <div className="form-column2">
                 <input type="text" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/>
                 <button onClick={handleAdd}>Add to menu</button>
-				<button onClick={handleLoad}> Load from API </button>
             </div>
         </div>
         </>

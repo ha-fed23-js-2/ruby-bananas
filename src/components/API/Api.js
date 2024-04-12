@@ -12,24 +12,26 @@ async function saveToApi(box) {
 		},
 		body: JSON.stringify({
 			key: key,
-			value: box  // kan vara hela state
+			value: box  
 		})
 	});
-	// If response.ok is true, the request succeeded
 	console.log('saveToApi response ok? ', response.ok);
-	// TODO: finish this when it's working
 }
 
 async function loadFromApi() {
-	const url = baseUrl + '?method=load&key=' + key
-	const response = await fetch(url, {
-		method: 'GET'
-	});
-	// const data = await response.json();
-	console.log('loadFromApi response ok? ', response.ok);
-	let result = await response.json()
-	console.log('loadFromApi result: ', result);
-	return result
+    const url = baseUrl + '?method=load&key=' + key;
+    try {
+        const response = await fetch(url, { method: 'GET' });
+        const result = await response.json();
+        console.log('loadFromApi response:', result);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return result;
+    } catch (error) {
+        console.error('Error loading data from API:', error);
+        return null;  }
 }
+
 
 export { saveToApi, loadFromApi }
