@@ -43,8 +43,10 @@ export default function ShoppingCart() {
 			</li>
 		))}
 		</ul>
-		<p className='total-amount'>Total amount: ${totalAmount}</p>
+		<div className='proceed-wrapper'>
 		<button>Proceed</button>
+		<p className='total-amount'>Total amount: ${totalAmount}</p>
+		</div>
   </div>
    )
 }
