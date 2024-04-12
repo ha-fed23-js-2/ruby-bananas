@@ -15,38 +15,36 @@ export default function ShoppingCart() {
    return (
 	
 	<div className='shopping-cart-container'>
-	
 
-<header>
-	<div>
-		<Link to="/"><button>Back</button></Link>
-	</div>
-	<div className='logo'>
-		<img src="./logo.png" />
-	</div>
-
-</header>
-
-	<h1>Shopping Cart Temporary Title</h1>
-	<ul className='shopping-cart-list'>
-	  {shoppingCart.map((item) => (
-		<li className='shopping-cart-item' key={item.id}>
-		  <img className='shopping-cart-img' src={item.image} alt={item.name} />
-		  <div className='shopping-cart-text'>
-			<span className='shopping-cart-remove-btn' onClick={() => removeFromBasket(item.id)}>
-			  <img src='../public/Vector.png' alt="remove" />
-			</span>
-			<span className='shopping-cart-quantity'><button onClick={() => removeOneFromBasket(item.id)}>-</button> {item.quantity} <button onClick={() => plusOneInBasket(item.id)}>+</button></span>
-			<h2 className='shopping-cart-title'>{item.name}</h2>
-			<p className='shopping-cart-description'>{item.description}</p>
-			<p className='shopping-cart-contains'>{item.contains}</p>
-			<p className='shopping-cart-price'>${item.price}</p>
-		  </div>
-		</li>
-	  ))}
-	</ul>
-	<p className='total-amount'>Total amount: ${totalAmount}</p>
-	<button>Proceed</button>
+		<header className='shopping-cart-header'>
+			<div className='back-btn-wrapper'>
+				<Link to="/"><button>Back</button></Link>
+			</div>
+			<div className='logo'>
+				<img src="./logo.png" />
+			</div>
+		</header>
+		<ul className='shopping-cart-list'>
+		{shoppingCart.map((item) => (
+			<li className='shopping-cart-item' key={item.id}>
+			<img className='shopping-cart-img' src={item.image} alt={item.name} />
+			<div className='shopping-cart-text'>
+				<h2 className='shopping-cart-title'>{item.name}</h2>
+				<p className='shopping-cart-description'>{item.description}</p>
+				<p className='shopping-cart-contains'>{item.contains}</p>
+				<p className='shopping-cart-price'>${item.price}</p>
+			</div>
+			<div className='quantity'>
+				<span className='quantity'><button onClick={() => removeOneFromBasket(item.id)}>-</button> {item.quantity} <button onClick={() => plusOneInBasket(item.id)}>+</button></span>
+				<span className='shopping-cart-remove-btn' onClick={() => removeFromBasket(item.id)}>
+				<img src='../public/Vector.png' alt="remove" />
+				</span>
+			</div>
+			</li>
+		))}
+		</ul>
+		<p className='total-amount'>Total amount: ${totalAmount}</p>
+		<button>Proceed</button>
   </div>
    )
 }
