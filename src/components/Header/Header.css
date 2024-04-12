@@ -7,12 +7,13 @@ header{
 
 }
 header > *{
-	width:33%;
+	width:70%;
 
 }
 
 .logo * {
-	width: 240px; height: 240px;
+	max-width: 240px;
+	max-height: 240px;
 
 }
 
@@ -22,4 +23,15 @@ nav * {
 	flex-direction: row;
 	gap: 1em;
 
+}
+
+@media (max-width: 563px) {
+	.logo * {
+		max-width: 190px;
+		max-height: 190px;
+	
+	}
+    header {
+		justify-content: center;
+	}
 }

@@ -7,6 +7,7 @@
     color: white;
 }
 
+
 .edit-menu-item-container {
     border-top: 1px solid white;
     padding-top: 2em;
@@ -25,7 +26,7 @@ article{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60%;
+    width: 100%;
 
 }
 
@@ -53,6 +54,9 @@ article{
     width: 100%;
 }
 
+.column2 button {
+background-color: #00000000;}
+
 .course-img {
     max-width: 10em;
     max-height: 20em;
@@ -79,25 +83,18 @@ article{
 }
 
 @media (max-width: 700px) {
-    .page-container {
+    .edit-page {
         padding: 0em;
-    }
-
-    .edit-menu-item-container,
-    .edit-menu-item-container > *,
-    .column,
-    .column2 {
-        padding: 0.5em;
     }
 
     .course-img {
         max-width: 8em;
-        max-height: 16em;
+        max-height: 10em;
     }
 
     .column h3,
     .edit-menu-item-description,
-    .edit-menu-item-price {
+    .edit-menu-item-price, .contains{
         font-size: smaller;
     }
 }
@@ -116,8 +113,16 @@ article{
 
     .column h3,
     .edit-menu-item-description,
-    .edit-menu-item-price {
+    .edit-menu-item-price, .contains {
         font-size: smaller;
+    }
+}
+
+@media (max-width: 420px) {
+    .column h3,
+    .edit-menu-item-description,
+    .edit-menu-item-price, .contains  {
+        font-size:x-small;
     }
 }
 /* FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORM */
@@ -187,4 +192,6 @@ input {
     .form-column2 :nth-child(1) {
         margin-bottom: 0.8em;
     }
+
+
 }

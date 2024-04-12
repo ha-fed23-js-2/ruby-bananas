@@ -74,7 +74,7 @@ function EditMenuItem({item}) {
 					<div className="column">
 						<h3>{item.name}</h3>
 						<p className="edit-menu-item-description">{item.description}</p>
-						<p className="">{item.contains}</p>
+						<p className="contains">{item.contains}</p>
 					</div>
 
 					<div className="column3">

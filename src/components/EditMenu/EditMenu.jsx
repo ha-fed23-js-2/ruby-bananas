@@ -7,6 +7,7 @@ import {editMenuStore} from './data/editMenuStore'
 import { Link } from 'react-router-dom'
 
 
+
 function EditMenu() {
 const {menu} = editMenuStore((state) =>  ({menu: state.menu}))
 	return (
@@ -15,7 +16,7 @@ const {menu} = editMenuStore((state) =>  ({menu: state.menu}))
 
 		<section className="edit-page">
 
-			<header>
+			<header className='edit-menu-header'>
 				<div>
 					<Link to="/"><button>Back</button></Link>
 				</div>
