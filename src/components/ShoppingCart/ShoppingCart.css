@@ -1,5 +1,10 @@
+.shopping-page{
+	padding: 2em;
+}
+
 .shopping-cart-container {
 	color: white;
+	padding: 2em;
 }
 
 .back-btn-wrapper {
@@ -10,7 +15,6 @@
 .shopping-cart-list {
     display: flex;
 	flex-direction: column;
-    justify-content: center;
 	text-align: left;
     width: 100%;
 	color: white;
@@ -21,6 +25,7 @@
 	justify-content: space-around;
 	width: 100%;
 	padding: 2em 0;
+	gap: 1em;
 	display: flex;
 	border-top: 1px solid white;
 	align-items: center;
@@ -30,6 +35,7 @@
 	display: flex;
 	flex-direction: column;
 	max-width: 65ch;
+	gap: 1em;
 }
 
 .shopping-cart-img {
@@ -38,19 +44,18 @@
 }
 
 .shopping-cart-remove-btn {
+	
 	border: none;
 	cursor: pointer;
-	align-self: start;
 }
+
 
 .quantity {
-	align-self: start;
-	margin-right: 2em;
+	gap: 1em;
+	display: inline-flex;
+
 }
 
-.shopping-cart-description, .shopping-cart-price {
-	margin-top: 1em;
-}
 
 .total-amount {
 	text-align: right;
