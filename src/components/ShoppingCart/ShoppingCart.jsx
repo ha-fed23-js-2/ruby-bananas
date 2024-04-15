@@ -21,7 +21,7 @@ export default function ShoppingCart() {
 
 <header>
 	<div>
-		<Link to="/"><button>Back</button></Link>
+		<NavLink to="/"><button>Back</button></NavLink>
 	</div>
 	<div className='logo'>
 		<img src="./logo.png" />
