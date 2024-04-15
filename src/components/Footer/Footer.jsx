@@ -9,21 +9,19 @@ function Footer() {
 		<>
 			<section className='footerSection' id="footer">
 
-			<div className='star-container'>
 
+			<div className='star-container'>
+		<h1>World's first five star micheline restaurant</h1>
+
+			<div className='stars'>
 					<img src='/MichelinStar.png'></img>
 					<img src='/MichelinStar.png'></img>
 					<img src='/MichelinStar.png'></img>
 					<img src='/MichelinStar.png'></img>
 					<img src='/MichelinStar.png'></img>
 			</div>
+			</div>
 
-
-
-				<div className='arrow-div'>
-
-					<button> <a href="#top"> ↑ </a></button>
-				</div>
 
 
 				<div className='footer-info'>
@@ -53,11 +51,11 @@ function Footer() {
 					</div>
 
 					<div className='footer-column'>
-						<h5 className='footer-title'>MASA FEJUJA GROUP AB</h5>
+						<h5 className='footer-title'>INFORMATION</h5>
 						<span className='line'></span>
-						<h5>Nominated to Micheline Dominator</h5>
-						<h5>reserve@masafejuja.com</h5>
-						<h5>press@theregaltable.com</h5>
+						<h5>MASA FEJUJA GROUP AB</h5>
+						<h5>SE559696-1337</h5>
+						<h5>© All rights reserved</h5>
 					</div>
 
 
