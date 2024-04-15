@@ -1,15 +1,22 @@
-import { useState } from 'react'
 import './edit-menu.css'
 import EditMenuItem from './EditMenuItem'
 import EditMenuForm from './EditMenuForm'
 import {editMenuStore} from './data/editMenuStore'
-// import editMenuStore from './data/editMenuStore'
 import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import {saveToApi, loadFromApi} from '../API/Api'
+
 
 
 function EditMenu() {
 const {menu} = editMenuStore((state) =>  ({menu: state.menu}))
-	return (
+
+useEffect(() => {
+	editMenuStore.getState().initializeMenu();
+}, []);
+
+console.log("Menu: ",menu);
+return (
 
 
 

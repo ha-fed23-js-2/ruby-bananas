@@ -47,7 +47,6 @@ export default function ShoppingCart() {
 					))}
 				</ul>
 
-
 				<div className='checkout'>
 				<p className='total-amount'>Total amount: ${totalAmount}</p>
 				<NavLink to="/form"><button className='proceed-btn'>Proceed</button></NavLink>

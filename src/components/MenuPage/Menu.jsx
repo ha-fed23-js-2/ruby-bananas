@@ -4,14 +4,16 @@ import NavMenu from './NavMenu'
 import { editMenuStore } from '../EditMenu/data/editMenuStore.js'
 import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
 import { useState } from 'react';
+import React, { useEffect } from 'react'
 
 
 function Menu() {
 	const courses = editMenuStore(state => state.menu)
 	const [totalPrice, setTotalPrice] = useState(0);
-	// const shoppingCart = navStore(state => state.shoppingCart)
 	const { addToBasket } = navStore();
-
+	useEffect(() => {
+		editMenuStore.getState().initializeMenu();
+	}, []);
 	return (
 
 		<>

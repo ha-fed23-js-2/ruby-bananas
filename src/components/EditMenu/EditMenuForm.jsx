@@ -4,29 +4,34 @@ import {editMenuStore} from './data/editMenuStore'
 
 function EditMenuForm() {
 
-    const {addMenuItem} = editMenuStore((state) => ({ addMenuItem: state.addMenuItem}))
+    const {addMenuItem, resetMenu} = editMenuStore((state) => ({ addMenuItem: state.addMenuItem,
+    resetMenu: state.resetMenu}))
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
     const [image, setImage] = useState('')
     const [contains, setContains] = useState('')
 
-    function handleAdd() {
+
+	async function handleAdd() {
+        
         const newItem = {
             name: name,
             description: description,
             contains: contains,
             price: price,
-            image: image  
-        }
-        addMenuItem(newItem)
+            image: image
+        };
+        await addMenuItem(newItem);
         console.log(newItem);
     }
+
+
 
     function handleImageChange(e) {
         const file = e.target.files[0]
         const imageUrl = URL.createObjectURL(file)
-        setImage(imageUrl)
+        setImage(imageUrl);
     }
 
     return (
@@ -41,6 +46,7 @@ function EditMenuForm() {
             <div className="form-column2">
                 <input type="text" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/>
                 <button onClick={handleAdd}>Add to menu</button>
+                <button onClick={resetMenu}>Reset</button>
             </div>
         </div>
         </>
