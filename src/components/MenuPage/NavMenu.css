@@ -1,34 +1,37 @@
-.guest-navbar{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	color: white;
-	padding: 1em 2em ;
-	position: sticky;
-	z-index: 1000;
-	    top: 0;
-	background-color:black;
-
+.guest-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 1em 2em;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: black;
 }
 
 .navbar select option {
-	color: black;
+    color: black;
 }
 
 .proceed-btn:disabled {
-	cursor: not-allowed;
-	opacity: 0.5;
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
-
-.guest-navbar > *{
-	width: 100%;
-	color: white;
-	display: flex;
-	justify-content: space-evenly;
+.guest-navbar > * {
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.navbar > *{
-	width: 33%;
+.navbar > * {
+    width: 33%;
 }
 
+@media (max-width: 375px) {
+    .guest-navbar {
+        padding: 1em;
+    }
+}
