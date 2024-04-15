@@ -3,8 +3,9 @@ const key = 'masafejuja';
 
 async function saveToApi(data) {
     const url = baseUrl + '?method=save';
-    console.log('saveToApi sending request to ' + url);
-    console.log('Sending these items to save:', data); // Добавлено логирование отправляемых данных
+    console.log('saveToApi sending request to:', url);
+    console.log('With data:', JSON.stringify({ key: key, value: data }));
+
     try {
         const response = await fetch(url, {
             method: 'POST',
@@ -12,22 +13,29 @@ async function saveToApi(data) {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                key: key,
-                value: data  // Изменено с box на data, если это соответствует вашим данным
-            })
+            body: JSON.stringify({ key: key, value: data })
         });
-        const responseData = await response.json(); 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}, Message: ${responseData.message}`);
+
+        // В зависимости от content-type обрабатываем ответ
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+            const responseData = await response.json();
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            console.log('Data successfully saved to API:', responseData);
+            return responseData;
+        } else {
+            const responseText = await response.text();
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}, Message: ${responseText}`);
+            console.log('Data successfully saved to API as text:', responseText);
+            return { success: true, data: responseText }; // Считаем текст успешным ответом
         }
-        console.log('Data successfully saved to API:', responseData);
-        return responseData; 
     } catch (error) {
         console.error('Error saving data to API:', error);
         return null;
     }
 }
+
+
 
 
 async function loadFromApi() {

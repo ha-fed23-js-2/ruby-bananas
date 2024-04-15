@@ -1,10 +1,9 @@
-
 import { create } from "zustand";
 import courses from '../../MenuPage/menuList';
 import { saveToApi, loadFromApi } from '../../API/Api';
 
 export const editMenuStore = create((set, get) => ({
-    menu: courses, 
+    menu: courses,
 
     initializeMenu: async () => {
         try {
@@ -20,31 +19,38 @@ export const editMenuStore = create((set, get) => ({
             set({ menu: courses });  // Использование начальных данных в случае ошибки
         }
     },
-    
-    
 
     addMenuItem: async (item) => {
-        const newItem = { ...item, id: Date.now() };
+        const newItem = { ...item, id: Date.now() }; // Ensure new items have a unique ID
         const updatedMenu = [...get().menu, newItem];
         set({ menu: updatedMenu });
-        const saveResult= await saveToApi(updatedMenu);
-        console.log('Save result: ', saveResult);
-        console.log('ФФФSending these items to save:', data);
-
+        await saveToApi(updatedMenu).then(response => {
+            console.log('Save result: ', response);
+        }).catch(error => {
+            console.error('Error saving menu:', error);
+        });
     },
 
     deleteMenuItem: async (id) => {
         const updatedMenu = get().menu.filter(item => item.id !== id);
         set({ menu: updatedMenu });
-        await saveToApi(updatedMenu);
+        await saveToApi(updatedMenu).then(response => {
+            console.log('Delete result: ', response);
+        }).catch(error => {
+            console.error('Error saving menu after delete:', error);
+        });
     },
 
     updateMenuItem: async (updatedItem) => {
         const updatedMenu = get().menu.map(item =>
-            item.id === updatedItem.id ? updatedItem : item
+            item.id === updatedItem.id ? { ...updatedItem } : item
         );
         set({ menu: updatedMenu });
-        await saveToApi(updatedMenu);
+        await saveToApi(updatedMenu).then(response => {
+            console.log('Update result: ', response);
+        }).catch(error => {
+            console.error('Error saving menu after update:', error);
+        });
     },
 
     resetMenu: async () => {
