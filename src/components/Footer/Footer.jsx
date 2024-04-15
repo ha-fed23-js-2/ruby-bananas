@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import './Footer.css'
 
 
@@ -11,14 +10,19 @@ function Footer() {
 
 
 			<div className='star-container'>
-		<h1>World's first five star micheline restaurant</h1>
+			<div className='review'>
+			<h1>"A world class tasting experience"</h1>
+			<h5>- Gordon Ramsey</h5>
+			</div>
 
 			<div className='stars'>
-					<img src='/MichelinStar.png'></img>
-					<img src='/MichelinStar.png'></img>
-					<img src='/MichelinStar.png'></img>
-					<img src='/MichelinStar.png'></img>
-					<img src='/MichelinStar.png'></img>
+						<img src='/public/MichelinStar.png' alt='stars'></img>
+						<img src='/public/MichelinStar.png' alt='stars'></img>
+						<img src='/public/MichelinStar.png' alt='stars'></img>
+						<img src='/public/MichelinStar.png' alt='stars'></img>
+						<img src='/public/MichelinStar.png' alt='stars'></img>
+
+
 			</div>
 			</div>
 
