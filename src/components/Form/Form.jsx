@@ -9,6 +9,7 @@ import Joi from 'joi';
 import './form.css';
 
 function ReservationForm() {
+
 	// State variables for the form fields
 	const [name, setName] = useState('')
 	const [nameTouched, setNameTouched] = useState(false)
@@ -65,7 +66,7 @@ function ReservationForm() {
 			email,
 			number
 		}
-		// console.log('Data from form: ', formData)
+		console.log('Data from form: ', formData)
 		// Reset form fields
 		setName('');
 		setNameTouched(false);
@@ -74,6 +75,7 @@ function ReservationForm() {
 		setNumber('');
 		setNumberTouched(false);
 		setAllergies('');
+		console.log('handle submit körs');
 	};
 
 	return (
@@ -128,9 +130,11 @@ function ReservationForm() {
 						<p>Booking conditions</p>
 						<p>Please note your seating time. Please note that we will hold your table for 3 minutes after your booked time</p>
 					</div>
-					<NavLink to="/thanks"><button
+					<NavLink to="/thanks">
+						<button
 						disabled={!formIsValid}
-						type="submit">Book your experience
+						type="submit"
+						>Book your experience
 					</button></NavLink>
 				</form>
 			</section>
