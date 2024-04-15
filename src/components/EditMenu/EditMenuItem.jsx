@@ -45,22 +45,25 @@ function EditMenuItem({ item }) {
         <article>
             {editMode ? (
                 <>
-                    <span className="line"></span>
+
                     <div className="edit-menu-item-container">
+                    <div></div>
                         <input type="file" onChange={handleImageChange} />
                         <div className="column">
-                            <input type="text" value={menuItemName} onChange={(e) => setMenuItemName(e.target.value)} />
-                            <input type="text" value={menuItemDescription} onChange={(e) => setMenuItemDescription(e.target.value)} />
-                            <input type="text" value={menuItemContains} onChange={(e) => setMenuItemContains(e.target.value)} />
+                            <input type="text" placeholder="Title" value={menuItemName} onChange={(e) => setMenuItemName(e.target.value)} />
+                            <input type="text" placeholder="Description" value={menuItemDescription} onChange={(e) => setMenuItemDescription(e.target.value)} />
+                            <input type="text" placeholder="Contains"  value={menuItemContains} onChange={(e) => setMenuItemContains(e.target.value)} />
+                            <input type="text" placeholder="$" value={menuItemPrice} onChange={(e) => setMenuItemPrice(e.target.value)} />
                         </div>
                         <div className="column3">
-                            <button onClick={handleEditMenuItem}>Save</button>
+
                         </div>
                         <div className="column2">
+
                             <button onClick={() => deleteMenuItem(item.id)}>
                                 <img src='./Vector.png' alt="Delete" className='close' />
                             </button>
-                            <input type="text" value={menuItemPrice} onChange={(e) => setMenuItemPrice(e.target.value)} />
+                            <button onClick={handleEditMenuItem}>Save</button>
                         </div>
                     </div>
                 </>
@@ -72,13 +75,13 @@ function EditMenuItem({ item }) {
                             <h3>{item.name}</h3>
                             <p className="edit-menu-item-description">{item.description}</p>
                             <p className="edit-menu-contains">{item.contains}</p>
-                        </div>
-                        <div className="column3">
+                            </div>
+                            <div className="column3">
                             <button className="edit-menu-button" onClick={() => setEditMode(true)}>Edit</button>
-                        </div>
-                        <div className="column2">
+                            </div>
+                            <div className="column2">
                             <button onClick={() => deleteMenuItem(item.id)}>
-                                <img src="./Vector.png" alt="Delete" className='close' />
+                            <img src="./Vector.png" alt="Delete" className='close' />
                             </button>
                             <p className="edit-menu-item-price">${item.price}</p>
                         </div>

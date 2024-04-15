@@ -165,8 +165,10 @@ article {
 
 input {
     color: white;
+    padding: 0.6em;
     border: 1px solid rgb(142, 142, 142);
     background-color: rgba(0, 0, 0, 0);
+    margin: 0.5em;
 }
 
 @media (max-width: 700px) {
@@ -180,6 +182,8 @@ input {
         margin: 0.5em;
     }
 
+
+
     .add-img {
         padding: 0.5em;
     }
@@ -192,4 +196,13 @@ input {
     .form-column2 :nth-child(1) {
         margin-bottom: 0.8em;
     }
+
+
+
+.edit-menu-item-container{
+    display: flex;
+    gap: 0.1em;
+
+
+}
 }
