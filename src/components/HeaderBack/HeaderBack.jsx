@@ -15,9 +15,9 @@ function HeaderBack () {
 			<div>
 				<NavLink to="/"><button>Back</button></NavLink>
 			</div>
-			<div className='logo'>
-				<img src="./logo.png" alt="Logo" />
-			</div>
+
+				<div className='logo'><NavLink to="/"><img src={logo} /></NavLink></div>
+				
 			<div></div>
 		</header>
 
