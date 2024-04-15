@@ -1,11 +1,11 @@
 import {useState} from 'react'
 import {editMenuStore} from './data/editMenuStore'
-import { saveToApi, loadFromApi } from '../API/Api.js'
 
 
 function EditMenuForm() {
 
-    const {addMenuItem} = editMenuStore((state) => ({ addMenuItem: state.addMenuItem}))
+    const {addMenuItem, resetMenu} = editMenuStore((state) => ({ addMenuItem: state.addMenuItem,
+    resetMenu: state.resetMenu}))
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
@@ -46,6 +46,7 @@ function EditMenuForm() {
             <div className="form-column2">
                 <input type="text" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/>
                 <button onClick={handleAdd}>Add to menu</button>
+                <button onClick={resetMenu}>Reset</button>
             </div>
         </div>
         </>
