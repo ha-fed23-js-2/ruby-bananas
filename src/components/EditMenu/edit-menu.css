@@ -7,7 +7,6 @@
     color: white;
 }
 
-
 .edit-menu-item-container {
     border-top: 1px solid white;
     padding-top: 2em;
@@ -26,7 +25,7 @@ article{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 60%;
 
 }
 
@@ -54,9 +53,6 @@ article{
     width: 100%;
 }
 
-.column2 button {
-background-color: #00000000;}
-
 .course-img {
     max-width: 10em;
     max-height: 20em;
@@ -83,18 +79,25 @@ background-color: #00000000;}
 }
 
 @media (max-width: 700px) {
-    .edit-page {
+    .page-container {
         padding: 0em;
+    }
+
+    .edit-menu-item-container,
+    .edit-menu-item-container > *,
+    .column,
+    .column2 {
+        padding: 0.5em;
     }
 
     .course-img {
         max-width: 8em;
-        max-height: 10em;
+        max-height: 16em;
     }
 
     .column h3,
     .edit-menu-item-description,
-    .edit-menu-item-price, .contains{
+    .edit-menu-item-price {
         font-size: smaller;
     }
 }
@@ -113,16 +116,8 @@ background-color: #00000000;}
 
     .column h3,
     .edit-menu-item-description,
-    .edit-menu-item-price, .contains {
+    .edit-menu-item-price {
         font-size: smaller;
-    }
-}
-
-@media (max-width: 420px) {
-    .column h3,
-    .edit-menu-item-description,
-    .edit-menu-item-price, .contains  {
-        font-size:x-small;
     }
 }
 /* FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORM */
@@ -192,6 +187,4 @@ input {
     .form-column2 :nth-child(1) {
         margin-bottom: 0.8em;
     }
-
-
 }

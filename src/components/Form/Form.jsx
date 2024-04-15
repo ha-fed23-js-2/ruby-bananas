@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import HeaderBack from '../HeaderBack/HeaderBack'
 
 import './form.css';
@@ -31,7 +31,7 @@ function ReservationForm() {
 					<p>Booking conditions</p>
 					<p>Please note your seating time. Please note that we will hold your table for 3 minutes after your booked time</p>
 				</div>
-				<button type="submit">Book your experience</button>
+				<NavLink to="/thanks"><button type="submit">Book your experience</button></NavLink>
 			</form>
 		</section>
 		</>
