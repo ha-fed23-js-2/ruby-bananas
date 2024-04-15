@@ -71,7 +71,7 @@ function EditMenuItem({ item }) {
                         <div className="column">
                             <h3>{item.name}</h3>
                             <p className="edit-menu-item-description">{item.description}</p>
-                            <p>{item.contains}</p>
+                            <p className="edit-menu-contains">{item.contains}</p>
                         </div>
                         <div className="column3">
                             <button className="edit-menu-button" onClick={() => setEditMode(true)}>Edit</button>
