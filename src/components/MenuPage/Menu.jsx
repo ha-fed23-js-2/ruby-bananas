@@ -32,7 +32,7 @@ function Menu() {
 							<div className='menu-info'>
 							<h2 className='menu-title'>{course.name}</h2>
 							<p>{course.description}</p>
-							<p>{course.contains} </p>
+									<p className='contains-text'><b>Contains:</b> {course.contains} </p>
 
 							<div className='button-row'>
 							<h4>${course.price}</h4>

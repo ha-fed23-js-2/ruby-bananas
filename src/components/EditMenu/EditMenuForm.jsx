@@ -44,9 +44,9 @@ function EditMenuForm() {
                 <input type="text" placeholder="Title" onChange={(e) => setName(e.target.value)} />
                 <input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
                 <input type="text" placeholder='Contains' onChange={(e) => setContains(e.target.value)} />
+                <input type="text" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/>
             </div>
             <div className="form-column2">
-                <input type="text" placeholder="Price" onChange={(e) => setPrice(e.target.value)}/>
                 <button onClick={handleAdd}>Add to menu</button>
                 <button onClick={resetMenu}>Reset</button>
             </div>

@@ -1,3 +1,4 @@
+
 .edit-page {
     background-color: black;
     padding: 0 5em;
@@ -7,6 +8,7 @@
     width: 100%;
     color: white;
     height: 100%;
+    margin-bottom: 6em;
 }
 
 .edit-menu-item-container {
@@ -147,23 +149,26 @@ article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 0.4em;
 }
 
-.form-column :nth-child(1),
-.form-column2 :nth-child(1) {
-    padding: 0.35em;
-}
-
-.form-column :nth-child(2),
-.form-column2 :nth-child(2) {
-    padding: 1em;
-}
-
-.form-column input[type="text"] {
+.form-column input {
     min-width: 30vw;
+    color:white;
+    padding: 0.6em;
+}
+.form-column2 input {
+    min-width: 30vw;
+    color:white;
+    padding: 0.6em;
 }
 
 input {
+    border: 1px solid white;
+    background-color: black;
+}
+
+.column > input {
     color: white;
     padding: 0.6em;
     border: 1px solid rgb(142, 142, 142);

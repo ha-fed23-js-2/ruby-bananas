@@ -5,6 +5,7 @@ import {editMenuStore} from './data/editMenuStore'
 import { Link } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import {saveToApi, loadFromApi} from '../API/Api'
+import HeaderBack from	'../HeaderBack/HeaderBack'
 
 
 
@@ -22,15 +23,7 @@ return (
 
 		<section className="edit-page">
 
-			<header>
-				<div>
-					<Link to="/"><button>Back</button></Link>
-				</div>
-				<div className='logo'>
-					<img src="./logo.png" />
-				</div>
-
-			</header>
+			<HeaderBack/>
 
 			<EditMenuForm/>
 			{menu.map((item, i) => (<EditMenuItem item={item} key={i}  />))}
