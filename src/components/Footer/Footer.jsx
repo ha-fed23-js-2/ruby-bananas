@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './Footer.css'
 
+import star from './MichelinStar.png'
+
 
 function Footer() {
 
@@ -10,20 +12,21 @@ function Footer() {
 
 
 			<div className='star-container'>
-			<div className='review'>
-			<h1>"A world class tasting experience"</h1>
-			<h5>- Gordon Ramsey</h5>
-			</div>
+				<div className='review'>
+						<h1>"A world class tasting experience"</h1>
+										<h3>- Gordon Ramsey</h3>
+				</div>
 
-			<div className='stars'>
-						<img src='/public/MichelinStar.png' alt='stars'></img>
-						<img src='/public/MichelinStar.png' alt='stars'></img>
-						<img src='/public/MichelinStar.png' alt='stars'></img>
-						<img src='/public/MichelinStar.png' alt='stars'></img>
-						<img src='/public/MichelinStar.png' alt='stars'></img>
+					<div className='stars'>
 
+							<img src={star} alt='stars'></img>
+							<img src={star} alt='stars'></img>
+							<img src={star} alt='stars'></img>
+							<img src={star} alt='stars'></img>
+							<img src={star} alt='stars'></img>
 
-			</div>
+					</div>
+
 			</div>
 
 
