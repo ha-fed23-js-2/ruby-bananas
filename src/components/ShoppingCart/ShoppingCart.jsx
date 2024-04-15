@@ -14,12 +14,14 @@ export default function ShoppingCart() {
 
    return (
 
-	<div className='shopping-cart-container'>
+	<section className='shopping-page'>
 
+	<div className='shopping-cart-container'>
+	
 
 <header>
 	<div>
-		<NavLink to="/"><button>Back</button></NavLink>
+		<Link to="/"><button>Back</button></Link>
 	</div>
 	<div className='logo'>
 		<img src="./logo.png" />
@@ -46,7 +48,8 @@ export default function ShoppingCart() {
 	  ))}
 	</ul>
 	<p className='total-amount'>Total amount: ${totalAmount}</p>
-		   <NavLink to="/form"><button>Proceed</button></NavLink>
+	<button>Proceed</button>
   </div>
+	   </section>
    )
 }
