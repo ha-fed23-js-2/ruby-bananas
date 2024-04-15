@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import HeaderBack from '../HeaderBack/HeaderBack'
 
 import './form.css';
 
@@ -11,15 +12,8 @@ function ReservationForm() {
 
 	return (
 		<>
-		<header>
-				<div>
-				<Link to="/"><button>Back</button></Link>
-				</div>
-				<div className='logo'>
-				<img src="./logo.png"/>
-				</div>
 
-			</header>
+		<HeaderBack/>
 
 		<section className='formSection'>
 

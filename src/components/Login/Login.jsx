@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
+import HeaderBack from '../HeaderBack/HeaderBack'
 import { Link, useNavigate } from 'react-router-dom';
 
 const Letter = ({ letter, onLetterClick, isWrong }) => {
@@ -31,7 +32,7 @@ const LoginPage = () => {
 	const handleLetterClick = (letter) => {
 		const newInput = input + letter;
 		if (newInput === password) {
-			navigate('/edit'); 
+			navigate('/edit');
 		} else if (!password.startsWith(newInput)) {
 			setIsWrong(true);
 			setInput('');
@@ -43,14 +44,7 @@ const LoginPage = () => {
 
 	return (
 		<>
-			<header>
-				<div>
-					<Link to="/"><button>Back</button></Link>
-				</div>
-				<div className='logo'>
-					<img src="./logo.png" alt="Logo" />
-				</div>
-			</header>
+			<HeaderBack/>
 			<section className='login-container'>
 				<div className={`passlogo ${isWrong ? 'wrong' : ''}`}>
 					{words.map((word, wordIndex) => (
