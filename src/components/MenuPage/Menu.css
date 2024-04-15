@@ -61,11 +61,6 @@
 
 }
 
-.menu-contains{
-  font-weight: 600;
-  margin: 0;
-  text-align: left;
-}
 
 .menu-contains-italic{
   font-style: italic;
@@ -105,7 +100,7 @@
   margin: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-end
+  justify-content: space-between;
 }
 
 .add-btn{

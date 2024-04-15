@@ -43,7 +43,7 @@ const courses = [
 
 	{
 		id: 6,
-		name: "Coquilles d'agrumes",
+		name: "Imperial Tasse de Thé",
 		description: "A royal selection of heirloom peas crowned with a buttery pearl onion, served in a hand-painted porcelain cup.",
 		contains: "Contains: Heirloom peas, pearl onions, butter, porcelain vessel.",
 		image: "./Masa6.png",

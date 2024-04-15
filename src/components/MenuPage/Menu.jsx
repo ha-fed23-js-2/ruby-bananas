@@ -33,10 +33,10 @@ function Menu() {
 							<h2 className='menu-title'>{course.name}</h2>
 							<p>{course.description}</p>
 							<p>{course.contains} </p>
-							
+
 							<div className='button-row'>
 							<h4>${course.price}</h4>
-							<button onClick={() => addToBasket(course, setTotalPrice)}>Add</button>
+							<button className='add-btn' onClick={() => addToBasket(course, setTotalPrice)}>Add</button>
 							{/* <button onClick={removeFromBasket}>Remove</button> */}
 							</div>
 							</div>
@@ -47,7 +47,7 @@ function Menu() {
 			</div>
 			</section>
 
-			
+
 		</>
 	)
 }
