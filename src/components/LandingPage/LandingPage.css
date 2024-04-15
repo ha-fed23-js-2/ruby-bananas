@@ -24,14 +24,7 @@
 	padding-left: 0.3em;
 }
 
-.arrow-div{
-	width: 100%;
-}
-
-
-.arrow-div > a {
-	font-size: 4vh;
-}
-.arrow-div > button {
-	font-size: 8vh;
+.arrow{
+font-size: 4em;
+color: rgb(145, 145, 145);
 }

@@ -17,10 +17,7 @@ function LandingPage() {
 					<div>star</div>
 					<div>tasting</div>
 					<div>experience</div>
-				</div>
-
-				<div className='arrow-div'>
-					<a href="#menu"><button> ↓ </button></a>
+					<h2 className='arrow'> ↓ </h2>
 				</div>
 
 			</section>
