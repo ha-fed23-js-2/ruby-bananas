@@ -6,10 +6,7 @@ header{
 	padding: 10vh;
 
 }
-header > *{
-	width:70%;
 
-}
 
 .logo * {
 	max-width: 240px;
@@ -29,7 +26,7 @@ nav * {
 	.logo * {
 		max-width: 190px;
 		max-height: 190px;
-	
+
 	}
     header {
 		justify-content: center;
