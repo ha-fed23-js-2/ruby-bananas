@@ -188,3 +188,8 @@ input {
         margin-bottom: 0.8em;
     }
 }
+
+
+.edit-error{
+	color: hsl(0, 100%, 45%);
+}
