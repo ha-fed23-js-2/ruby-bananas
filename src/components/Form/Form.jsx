@@ -128,9 +128,11 @@ function ReservationForm() {
 						<p>Booking conditions</p>
 						<p>Please note your seating time. Please note that we will hold your table for 3 minutes after your booked time</p>
 					</div>
-					<NavLink to="/thanks"><button
-						disabled={!formIsValid}
-						type="submit">Book your experience
+					<NavLink to="/thanks">
+						<button
+							disabled={!formIsValid}
+							type="submit"
+						>Book your experience
 					</button></NavLink>
 				</form>
 			</section>

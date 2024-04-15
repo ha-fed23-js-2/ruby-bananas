@@ -5,13 +5,15 @@ import { NavLink } from 'react-router-dom';
 import HeaderBack from '../HeaderBack/HeaderBack';
 
 export default function ShoppingCart() {
-	const { shoppingCart, removeFromBasket, removeOneFromBasket, totalAmount, plusOneInBasket } = navStore((state) => ({
+	const { shoppingCart, removeFromBasket, removeOneFromBasket, totalAmount, plusOneInBasket, requiredDishes } = navStore((state) => ({
 		shoppingCart: state.shoppingCart,
 		removeFromBasket: state.removeFromBasket,
 		removeOneFromBasket: state.removeOneFromBasket,
 		plusOneInBasket: state.plusOneInBasket,
 		totalAmount: state.shoppingCart.reduce((acc, item) => acc + (item.price * item.quantity), 0),
+		requiredDishes: state.requiredDishes,
 	}));
+	const totalSelectedCourses = shoppingCart.reduce((acc, item) => acc + item.quantity, 0)
 
 	return (
 		<>
@@ -49,7 +51,7 @@ export default function ShoppingCart() {
 
 				<div className='checkout'>
 				<p className='total-amount'>Total amount: ${totalAmount}</p>
-				<NavLink to="/form"><button className='proceed-btn'>Proceed</button></NavLink>
+					<NavLink to="/form"><button disabled={totalSelectedCourses < requiredDishes}>Proceed</button></NavLink>
 				</div>
 			</div>
 		</>

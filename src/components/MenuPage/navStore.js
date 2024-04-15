@@ -1,5 +1,8 @@
 import { create } from 'zustand';
 
+
+
+
 export const navStore = create((set) => ({
    guests: 1,
    requiredDishes: 3,
@@ -70,13 +73,14 @@ export const navStore = create((set) => ({
         newCart[index] = updatedItem;
     }
 
-    const newTotal = state.totalSelectedCourses - 1; 
+    const newTotal = state.totalSelectedCourses - 1;
 
     return {
         shoppingCart: newCart,
         totalSelectedCourses: newTotal,
     };
 }),
+    clearShoppingCart: () => set({ shoppingCart: [], totalSelectedCourses: 0, requiredDishes: 3, }),
 
    handleGuestChange: (event) => {
        const selectedGuests = parseInt(event.target.value, 10);

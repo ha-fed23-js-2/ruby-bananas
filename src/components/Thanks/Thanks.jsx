@@ -1,10 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 import HeaderBack from '../HeaderBack/HeaderBack'
+import { navStore } from '../MenuPage/navStore';
+import { useState, useEffect } from 'react';
 
 import './thanks.css';
 
 function Thanks() {
+
+	const { clearShoppingCart } = navStore();
+
+	useEffect(() => {
+		// När komponenten monteras, rensa shoppingCart
+		clearShoppingCart();
+
+		// Rensa också localStorage
+		localStorage.clear();
+	}, []);
 
 
 	return (
