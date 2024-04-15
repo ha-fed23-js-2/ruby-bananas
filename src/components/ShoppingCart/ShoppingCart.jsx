@@ -29,7 +29,6 @@ export default function ShoppingCart() {
 
 </header>
 
-	<h1>Shopping Cart Temporary Title</h1>
 	<ul className='shopping-cart-list'>
 	  {shoppingCart.map((item) => (
 		<li className='shopping-cart-item' key={item.id}>
