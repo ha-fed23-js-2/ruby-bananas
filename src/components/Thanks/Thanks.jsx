@@ -20,7 +20,9 @@ function Thanks() {
 					</h2>
 			</div>
 
-			<NavLink to="/"> Home </NavLink>
+			<div>
+				<NavLink to="/"><button>Back to home </button></NavLink>
+			</div>
 
 		</section>
 		</>
