@@ -1,41 +1,49 @@
-.loginSection{
-	width: 100%;
-	height: 80vh;
-	display: flex;
-	justify-content: center;
-	text-align: center;
+.login-container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-container > * {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .letter {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 10vw;
-  cursor: pointer;
-  margin: 0 2px;
-  transition: all 0.3s ease;
-  color: rgb(111, 111, 111);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10vw;
+    cursor: pointer;
+    margin: 0 2px;
+    transition: all 0.3s ease;
+    color: rgb(111, 111, 111);
 }
 
 .letter:hover {
-  color: rgb(222, 222, 222);
+    color: rgb(222, 222, 222);
 }
+
 .clicked {
-  color: #009688;
+    color: #009688;
 }
 
-.correct {
-  animation: greenBlink 600ms 2;
+.passlogo.correct { /* Updated from .correct to .passlogo.correct for better specificity */
+    animation: greenBlink 600ms 2;
 }
 
-.wrong {
-  animation: redBlink 600ms 2;
+.passlogo.wrong { /* Updated from .wrong to .passlogo.wrong for better specificity */
+    animation: redBlink 600ms 2;
 }
 
 @keyframes redBlink {
-  0%, 100% { background-color: transparent; }
-  50% { color: rgb(133, 18, 18); }
+    0%, 100% { background-color: transparent; }
+    50% { background-color: rgb(133, 18, 18); }
 }
 
 @keyframes greenBlink {
-  0%, 100% { background-color: transparent; }
-  50% { background-color: green; }
+    0%, 100% { background-color: transparent; }
+    50% { background-color: green; }
 }

@@ -1,12 +1,12 @@
 import { createHashRouter } from 'react-router-dom'
 import Root from './components/Root.jsx'
-import MenuPage from './components/MenuPage/Menu.jsx'
 import EditMenu from './components/EditMenu/EditMenu.jsx'
 import LoginPage from './components/Login/Login.jsx'
 import Form from './components/Form/Form.jsx'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart.jsx'
-import Footer from './components/Footer/Footer.jsx'
 import LandingPage from './components/LandingPage/LandingPage.jsx'
+import Thanks from './components/Thanks/Thanks.jsx'
+
 
 const router = createHashRouter([
 	{
@@ -21,6 +21,10 @@ const router = createHashRouter([
 
 		// Inuti Root ska vi klistra in den komponent vars route matchar URL bäst
 		children: [
+			{
+				path: '/thanks',
+				element: <Thanks />
+			},
 			{
 				path: '/login',
 				element: <LoginPage />
