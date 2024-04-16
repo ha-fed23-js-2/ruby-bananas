@@ -81,6 +81,8 @@ export const navStore = create(
                 };
             }),
 
+			clearShoppingCart: () => set({ shoppingCart: [], totalSelectedCourses: 0, requiredDishes: 3, }),
+
             handleGuestChange: (event) => {
                 const selectedGuests = parseInt(event.target.value, 10);
                 set({
