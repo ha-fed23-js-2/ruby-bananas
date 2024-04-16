@@ -27,12 +27,15 @@ function EditMenuForm() {
     }
 
 
-
     function handleImageChange(e) {
-        const file = e.target.files[0]
-        const imageUrl = URL.createObjectURL(file)
-        setImage(imageUrl);
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            setImage(reader.result);  // This is now a data URL
+        };
+        reader.readAsDataURL(file);
     }
+
 
     return (
         <>
